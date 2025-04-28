@@ -1,73 +1,59 @@
-# Welcome to your Lovable project
+# עֹז וְתַעֲצֻמוֹת - חווה חקלאית לשיקום הלומי קרב
 
-## Project info
+אתר זה מיועד לחוות עז ותעצומות, חווה חקלאית המיועדת לשיקום הלומי קרב באמצעות חקלאות טיפולית וטיפול בסביבה טבעית.
 
-**URL**: https://lovable.dev/projects/32c41c94-3ca5-4129-922c-da00a7284203
+## תוכן האתר
 
-## How can I edit this code?
+האתר כולל:
+- דף בית עם מידע על החווה
+- גלריית תמונות ווידאו מהפעילות בחווה
+- מידע על פוסט טראומה כבעיה לאומית
+- יצירת קשר
 
-There are several ways of editing your application.
+## טכנולוגיות
 
-**Use Lovable**
+פרויקט זה נבנה בעזרת:
+- React + TypeScript
+- Vite - כמנוע פיתוח מהיר
+- Tailwind CSS - לעיצוב מודרני ומגיב
+- shadcn/ui - לרכיבי ממשק מתקדמים
+- React Router - לניווט בין דפים
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/32c41c94-3ca5-4129-922c-da00a7284203) and start prompting.
+## איך להריץ את הפרויקט
 
-Changes made via Lovable will be committed automatically to this repo.
+### דרישות מוקדמות
+- Node.js (>=16)
+- npm או yarn
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### שלבים
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Step 1: Clone the repository
+git clone <REPO_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd oz_taazumot_react
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install dependencies
+npm install
+# or
+yarn
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
+# or
+yarn dev
 ```
 
-**Edit a file directly in GitHub**
+לאחר הרצת הפקודות, האתר יהיה זמין בכתובת `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## מבנה קבצים עיקרי
 
-**Use GitHub Codespaces**
+- `src/pages/` - דפי האתר השונים
+- `src/components/` - רכיבים משותפים
+- `public/` - נכסים סטטיים כמו תמונות וקבצי favicon
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## צוות הפיתוח
 
-## What technologies are used for this project?
+אתר זה פותח עבור חוות עז ותעצומות  
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/32c41c94-3ca5-4129-922c-da00a7284203) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
