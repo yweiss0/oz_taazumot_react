@@ -10,9 +10,9 @@ const navItems = [
   { text: 'תרפיה בטבע', path: '/nature-therapy' },
   { text: 'גלריה', path: '/gallery' },
   { text: 'בואו לעזור   ', path: '/help' },
-  { text: 'העמותה', path: '/organization' },
+  // { text: 'העמותה', path: '/organization' },
   { text: 'צור קשר', path: '/contact' },
-  { text: 'רוצים לתרום', path: '/donate' }
+  // { text: 'רוצים לתרום', path: '/donate' }
 ];
 
 const Navbar: React.FC = () => {
