@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface LayoutProps {
@@ -41,10 +41,19 @@ const Footer: React.FC = () => {
               href="https://www.google.com/maps/place/%D7%97%D7%95%D7%95%D7%AA+%D7%A2%D7%96+%D7%95%D7%AA%D7%A2%D7%A6%D7%95%D7%9E%D7%95%D7%AA%E2%80%AD/@32.689192,35.5438874,17z/data=!3m1!4b1!4m6!3m5!1s0x151c41fee1361d9f:0xa5200dd945e4dddc!8m2!3d32.6891875!4d35.5413125!16s%2Fg%2F11ty4wtwnm?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center justify-end hover:text-farm-green-pale transition-colors"
+              className="flex items-center justify-end hover:text-farm-green-pale transition-colors mb-2"
             >
               <span className="ml-2">חוות עז ותעצומות</span>
               <MapPin className="h-5 w-5 ml-2" />
+            </a>
+            <a 
+              href="https://www.facebook.com/OZ.TAAZUMOT" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center justify-end hover:text-farm-green-pale transition-colors"
+            >
+              <span className="ml-2">עז ותעצומות בפייסבוק</span>
+              <Facebook className="h-5 w-5 ml-2" />
             </a>
           </div>
         </div>
