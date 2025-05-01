@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -9,6 +8,7 @@ const navItems = [
   { text: 'פוסט טראומה בעיה לאומית', path: '/national-problem' },
   { text: 'תרפיה בטבע', path: '/nature-therapy' },
   { text: 'גלריה', path: '/gallery' },
+  { text: 'תודות', path: '/thanks' },
   { text: 'בואו לעזור   ', path: '/help' },
   // { text: 'העמותה', path: '/organization' },
   { text: 'צור קשר', path: '/contact' },
