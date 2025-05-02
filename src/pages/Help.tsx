@@ -31,6 +31,7 @@ const Help = () => {
           לא רק בכסף – בידיים, בזמן, בלב.
         </blockquote>
       </div>
+      <p className='text-blue-500 text-2xl mb-4 font-bold'>אנחנו מזמינים אתכם לתרום – חממות, ציוד חקלאי, ציוד השקיה, שתילים, פרחים, סככות, גנרטור, ריהוט גן, דשא סינטטי, אמנות ופיסול סביבתי, שתילי תבלין, מצללות, ספסלי קקל, כסאות , שולחנות,  – כל תרומה מחזקת את הלוחמים שלנו</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white p-6 rounded-lg shadow-md">
@@ -58,21 +59,6 @@ const Help = () => {
         </div>
       </div>
 
-      <div className="bg-white p-8 rounded-lg shadow-md my-8">
-        <div 
-          className="max-w-2xl mx-auto h-80 overflow-hidden relative group cursor-pointer rounded-lg"
-          onClick={() => openModal("/comehelp.jpg")}
-        >
-          <img 
-            src="/comehelp.jpg" 
-            alt="עז ותעצומות - הזמנה להתנדבות" 
-            className="w-full h-full object-contain transition-all duration-300 group-hover:scale-105 group-hover:opacity-90" 
-          />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <p className="text-white text-lg font-semibold">לחץ על התמונה להגדלה</p>
-          </div>
-        </div>
-      </div>
 
       <div className="bg-green-50 p-6 rounded-lg shadow-md mt-8">
         <h2 className="text-2xl font-bold text-green-800 mb-4">צרו קשר להתנדבות</h2>

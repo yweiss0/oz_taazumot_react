@@ -19,7 +19,7 @@ const Gallery = () => {
   // ----- Images -----
   const imageIds: string[] = [
     "1PwsGnECbKK0BoXFl7ImalKmpudNiVupa", //1
-    "1yi8BIkDGwAnnZEkG36QG7t2M_uF8hXrS", //2
+    //"1yi8BIkDGwAnnZEkG36QG7t2M_uF8hXrS", //2
     "1jD__rcpxKVj0pRW_kb3WZfbUQybF2hq6", //3
     "1E4yF4UmY31nhX4DYqib1tCIL-wybF0-Y", //4
     "1eXYn4ktLprn2BbWN7uR2dRUCjSZd2SfS", //5
@@ -187,10 +187,7 @@ const Gallery = () => {
         <div className="prose prose-lg max-w-none text-right mb-12">
           <h2 className="text-2xl font-bold text-farm-green mb-4">אירועים מיוחדים בחווה</h2>
           <p>
-            לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק.
-          </p>
-          <p>
-            קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה. לפמעט
+          אנו עורכים אירועים מיוחדים לפי הזמנה של יחידות צהל, עיבוד חוויות לחימה, משפחות שכול,   אירועי מוסיקה, יוגה בטבע, ועוד
           </p>
         </div>
       </div>
