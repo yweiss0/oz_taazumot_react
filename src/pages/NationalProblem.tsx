@@ -65,19 +65,21 @@ const NationalProblem = () => {
       <div className="page-container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 items-center">
           <div className="md:col-span-2 prose prose-lg max-w-none text-right">
-            <p>
+            <p className="text-2xl">
               בעקבות המלחמה, מערכת בריאות הנפש בישראל נמצאת בעומס חסר תקדים. ההערכות מצביעות על כך ש-7% - 10% ממי שנחשפו לאירועי הקשים עשויים לפתח פוסט-טראומה. מאות אלפי ישראלים שחוו את אירועי המלחמה נמצאים בסיכון מוגבר לפגיעה נפשית.
             </p>
-            <p>
+            <p className="text-2xl">
               אנשי מקצוע מעריכים כי כ-9,000 פניות שונות נרשמו במוקדי הסיוע הנפשי מאז פרוץ המלחמה. מערכת בריאות הנפש שהייתה במשבר עוד לפני המלחמה, כעת קורסת תחת העומס הנוסף. הצורך במתן מענה מיידי וארוך טווח הפך לאתגר לאומי מהגדולים שידענו.
             </p>
           </div>
-          <div className="h-80 overflow-hidden rounded-lg shadow-lg">
-            <img 
-              src="/ספר ולדמן.JPG" 
-              alt="ספר על טראומה" 
-              className="w-full h-full object-cover"
-            />
+          <div className="flex items-center justify-center">
+            <div className="h-auto max-h-114 rounded-lg shadow-lg max-w-[180px]">
+              <img 
+                src="/ספר ולדמן.JPG" 
+                alt="ספר על טראומה" 
+                className="w-full object-contain mx-auto"
+              />
+            </div>
           </div>
         </div>
         
