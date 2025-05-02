@@ -39,7 +39,7 @@ const OpenInvitation = () => {
     <div>
       <PageHeader 
         title="הזמנה פתוחה" 
-        subtitle="הצטרפו אלינו"
+        subtitle="האירוח ללא תמורה "
       />
       
       <div className="page-container">
