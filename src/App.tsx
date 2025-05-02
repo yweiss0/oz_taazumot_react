@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
 import Thanks from "./pages/Thanks";
 import NotFound from "./pages/NotFound";
+import ProfOzVideo from "./pages/ProfOzVideo";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/" element={<Layout><Home /></Layout>} />
           <Route path="/national-problem" element={<Layout><NationalProblem /></Layout>} />
           <Route path="/nature-therapy" element={<Layout><NatureTherapy /></Layout>} />
+          <Route path="/prof-oz-video" element={<Layout><ProfOzVideo /></Layout>} />
           <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
           <Route path="/thanks" element={<Layout><Thanks /></Layout>} />
           <Route path="/help" element={<Layout><Help /></Layout>} />
