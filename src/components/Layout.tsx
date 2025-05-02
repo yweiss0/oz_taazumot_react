@@ -30,11 +30,15 @@ const Footer: React.FC = () => {
           <div className="text-right">
           
             <div className="flex items-center justify-end mb-2">
-              <span className="ml-1 direction-ltr text-left" dir="ltr">+972 52-443-4350</span>
+              <span className="ml-1 direction-ltr text-left" dir="ltr">+972 52-443-4350 מנהל החווה - חן ברין</span>
               <Phone className="h-5 w-5 ml-2" />
             </div>
             <div className="flex items-center justify-end mb-2">
-              <span className="ml-2 direction-ltr text-left" dir="ltr">oz0524434350@gmail.com</span>
+              <span className="ml-1 direction-ltr text-left" dir="ltr">+972 50-523-2631 העמותה   </span>
+              <Phone className="h-5 w-5 ml-2" />
+            </div>
+            <div className="flex items-center justify-end mb-2">
+              <span className="ml-2 direction-ltr text-left" dir="ltr">oz.nefesh@gmail.com</span>
               <Mail className="h-5 w-5 ml-2" />
             </div>
             <a 

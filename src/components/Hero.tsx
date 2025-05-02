@@ -37,13 +37,13 @@ const Hero: React.FC<HeroProps> = ({
         <p className="hero-subtitle">{subtitle}</p>
         
         {quote && (
-          <p className="text-xl md:text-2xl text-farm-earth max-w-2xl mb-2 animate-fade-in font-semibold">
+          <p className="text-xl md:text-2xl text-farm-green max-w-2xl mb-2 animate-fade-in font-semibold">
             {quote}
           </p>
         )}
         
         {supportText && (
-          <p className="text-lg md:text-xl text-farm-earth max-w-2xl mb-6 animate-fade-in">
+          <p className="text-lg md:text-xl text-farm-green max-w-2xl mb-6 animate-fade-in">
             {supportText}
           </p>
         )}

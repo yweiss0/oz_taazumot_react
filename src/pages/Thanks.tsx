@@ -34,7 +34,7 @@ const Thanks = () => {
     <div>
       <PageHeader 
         title="תודות" 
-        subtitle="  תודות מיוחדות שהחווה קיבלה  (רשימה חלקית)"
+        subtitle="  תודות  מיוחדות שהחווה קיבלה  (רשימה חלקית)"
       />
       
       <div className="page-container">
