@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -21,26 +21,98 @@ const Hero: React.FC<HeroProps> = ({
   quote,
   supportText,
 }) => {
-  return (
-    <div className="hero-section">
-      <div 
-        className="absolute inset-0 bg-cover bg-center" 
-        style={{ 
-          backgroundImage: `url(${imageSrc})`,
-          opacity: '0.3' 
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-l from-farm-green/20 to-transparent" />
+  // Images for carousel
+  const carouselImages = [
+    'https://images.unsplash.com/photo-1506744038136-46273834b3fb', // Original image
+    '/background.jpeg',
+    '/background2.jpeg',
+    '/background3.jpeg',
+    '/background4.jpeg',
+    '/background5.jpeg',
+    '/background6.jpeg',
+  ];
+
+  // State to track current image index
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Function to render quote with citation in smaller text
+  const renderQuote = () => {
+    if (!quote) return null;
+    
+    // Check if the quote contains a citation (assumes citation follows a period)
+    const parts = quote.split('.');
+    if (parts.length > 1) {
+      const mainText = parts[0] + '.';
+      const citation = parts[1].trim();
       
-      <div className="hero-content">
-        <h1 className="hero-title">{title}</h1>
-        <p className="hero-subtitle">{subtitle}</p>
+      return (
+        <p className="text-xl md:text-2xl text-farm-green max-w-2xl mb-2 animate-fade-in font-semibold">
+          {mainText}{' '}
+          <span className="text-sm md:text-base">{citation}</span>
+        </p>
+      );
+    }
+    
+    // If no citation format detected, render normally
+    return <p className="text-xl md:text-2xl text-farm-green max-w-2xl mb-2 animate-fade-in font-semibold">{quote}</p>;
+  };
+
+  // Function to render title with second part in smaller text
+  const renderTitle = () => {
+    // Check if the title contains a dash (-) to split the title
+    if (title.includes('-')) {
+      const parts = title.split('-');
+      const mainTitle = parts[0].trim();
+      const secondaryTitle = parts.slice(1).join('-').trim();
+      
+      return (
+        <h1 className="hero-title">
+          {mainTitle}{' '}
+          <span className="text-xl md:text-2xl">- {secondaryTitle}</span>
+        </h1>
+      );
+    }
+    
+    // If no dash found, render normally
+    return <h1 className="hero-title">{title}</h1>;
+  };
+
+  // Set up automatic image rotation
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(intervalId); // Cleanup on unmount
+  }, []);
+
+  return (
+    <div className="hero-section relative overflow-hidden">
+      {/* Carousel images - now full width */}
+      <div className="absolute inset-0 overflow-hidden">
+        {carouselImages.map((img, index) => (
+          <div
+            key={index}
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+            style={{
+              backgroundImage: `url(${img})`,
+              opacity: currentImageIndex === index ? '0.4' : '0',
+              zIndex: 1
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Gradient overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-farm-green/40 to-transparent z-2"></div>
+      
+      <div className="hero-content relative z-10">
+        {renderTitle()}
+        {subtitle && <p className="hero-subtitle">{subtitle}</p>}
         
-        {quote && (
-          <p className="text-xl md:text-2xl text-farm-green max-w-2xl mb-2 animate-fade-in font-semibold">
-            {quote}
-          </p>
-        )}
+        {quote && renderQuote()}
         
         {supportText && (
           <p className="text-lg md:text-xl text-farm-green max-w-2xl mb-6 animate-fade-in">
