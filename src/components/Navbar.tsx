@@ -8,7 +8,9 @@ const navItems = [
   { text: 'פוסט טראומה בעיה לאומית', path: '/national-problem' },
   { text: 'תרפיה בטבע', path: '/nature-therapy' },
   { text: 'פרופ עוז גוטרמן: צמיחה מ PTSD', path: '/prof-oz-video' },
+  { text: 'הזמנה פתוחה', path: '/open-invitation' },
   { text: 'גלריה', path: '/gallery' },
+  
   { text: 'תודות', path: '/thanks' },
   { text: 'בואו לעזור   ', path: '/help' },
   // { text: 'העמותה', path: '/organization' },
