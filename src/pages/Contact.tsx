@@ -41,7 +41,7 @@ const Contact = () => {
               <div className="flex items-center justify-end">
                 <div className="text-right">
                   <p className="font-semibold text-farm-green">דוא"ל</p>
-                  <p className="text-gray-700" dir="ltr">oz0524434350@gmail.com</p>
+                  <p className="text-gray-700" dir="ltr">oz.nefesh@gmail.com</p>
                 </div>
                 <div className="bg-farm-green-pale p-3 rounded-full mr-4">
                   <Mail className="h-6 w-6 text-farm-green" />
