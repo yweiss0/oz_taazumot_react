@@ -9,18 +9,18 @@ const OpenInvitation = () => {
   // Image IDs from Google Drive
   const invitationImages = [
     {
-      // From: https://drive.google.com/file/d/1PwsGnECbKK0BoXFl7ImalKmpudNiVupa/view?usp=drivesdk
-      id: "1PwsGnECbKK0BoXFl7ImalKmpudNiVupa",
+      // From: https://drive.google.com/file/d/1EbyItA-mfzLnlVGSZUnPgrSgpSTev5rA/view?usp=sharing
+      id: "1EbyItA-mfzLnlVGSZUnPgrSgpSTev5rA",
       alt: "הזמנה פתוחה 1"
     },
     {
-      // From: https://drive.google.com/file/d/1yi8BIkDGwAnnZEkG36QG7t2M_uF8hXrS/view?usp=drivesdk
-      id: "1yi8BIkDGwAnnZEkG36QG7t2M_uF8hXrS",
+      // From: https://drive.google.com/file/d/1B2SE9rdMSTjVm_NjurWEMUxbn8183Mec/view?usp=drive_link
+      id: "1B2SE9rdMSTjVm_NjurWEMUxbn8183Mec",
       alt: "הזמנה פתוחה 2"
     },
     {
-      // From: https://drive.google.com/file/d/1jD__rcpxKVj0pRW_kb3WZfbUQybF2hq6/view?usp=drivesdk
-      id: "1jD__rcpxKVj0pRW_kb3WZfbUQybF2hq6",
+      // From: https://drive.google.com/file/d/1DPX3nLs8badiq9Nz3Rs45eng2eaNdkYz/view?usp=drive_link
+      id: "1DPX3nLs8badiq9Nz3Rs45eng2eaNdkYz",
       alt: "הזמנה פתוחה 3"
     }
   ];
