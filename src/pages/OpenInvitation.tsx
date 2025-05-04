@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PageHeader from '@/components/PageHeader';
 import { Card, CardContent } from '@/components/ui/card';
-import { X } from 'lucide-react';
+import { X, Play } from 'lucide-react';
 
 const OpenInvitation = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   // Image IDs from Google Drive
   const invitationImages = [
@@ -35,6 +37,13 @@ const OpenInvitation = () => {
     document.body.style.overflow = 'auto';
   };
 
+  const handleVideoPlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsVideoPlaying(true);
+    }
+  };
+
   return (
     <div>
       <PageHeader 
@@ -43,6 +52,34 @@ const OpenInvitation = () => {
       />
       
       <div className="page-container">
+        {/* Farm Video */}
+        <div className="flex justify-center mb-12">
+          <div className="w-full max-w-3xl shadow-lg rounded-lg overflow-hidden relative">
+            <video 
+              ref={videoRef}
+              src="/farm.mp4" 
+              className="w-full" 
+              controls={isVideoPlaying}
+              onPlay={() => setIsVideoPlaying(true)}
+              onPause={() => setIsVideoPlaying(false)}
+              onEnded={() => setIsVideoPlaying(false)}
+            >
+              Your browser does not support the video tag.
+            </video>
+            
+            {!isVideoPlaying && (
+              <div 
+                className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center cursor-pointer"
+                onClick={handleVideoPlay}
+              >
+                <div className="rounded-full bg-white bg-opacity-80 p-4 shadow-xl transition-transform hover:scale-110">
+                  <Play className="h-12 w-12 text-farm-green fill-current" />
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {invitationImages.map((image, index) => (
             <Card key={index} className="overflow-hidden shadow-md hover:shadow-xl transition-shadow">
