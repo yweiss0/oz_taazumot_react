@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
               rel="noopener noreferrer" 
               className="flex items-center justify-end hover:text-farm-green-pale transition-colors mb-2"
             >
-              <span className="ml-2">הגעה בווייז "חוות עוז ותעצומות"</span>
+              <span className="ml-2">הגעה בווייז "חוות עז ותעצומות"</span>
               <img src="/waze-icon.png" alt="Waze" className="h-5 w-5 ml-2" />
             </a>
             <a 
