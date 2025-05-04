@@ -49,15 +49,22 @@ const Hero: React.FC<HeroProps> = ({
       const citation = parts[1].trim();
       
       return (
-        <p className="text-xl md:text-2xl text-white max-w-2xl mb-2 animate-fade-in font-semibold" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
+        <p className="text-xl md:text-2xl text-white max-w-2xl mb-2 animate-fade-in font-semibold" 
+           style={{ textShadow: '0px 0px 1px #000, 0px 0px 2px #000' }}>
           {mainText}{' '}
-          <span className="text-sm md:text-base" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>{citation}</span>
+          <span className="text-sm md:text-base" 
+                style={{ textShadow: '0px 0px 1px #000, 0px 0px 2px #000' }}>
+            {citation}
+          </span>
         </p>
       );
     }
     
     // If no citation format detected, render normally
-    return <p className="text-xl md:text-2xl text-white max-w-2xl mb-2 animate-fade-in font-semibold" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>{quote}</p>;
+    return <p className="text-xl md:text-2xl text-white max-w-2xl mb-2 animate-fade-in font-semibold" 
+              style={{ textShadow: '0px 0px 1px #000, 0px 0px 2px #000' }}>
+      {quote}
+    </p>;
   };
 
   // Function to render title with second part in smaller text
@@ -69,15 +76,22 @@ const Hero: React.FC<HeroProps> = ({
       const secondaryTitle = parts.slice(1).join('-').trim();
       
       return (
-        <h1 className="hero-title text-white" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
+        <h1 className="hero-title text-white" 
+            style={{ textShadow: '0px 0px 1px #000, 0px 0px 2px #000' }}>
           {mainTitle}{' '}
-          <span className="text-xl md:text-2xl" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>- {secondaryTitle}</span>
+          <span className="text-xl md:text-2xl" 
+                style={{ textShadow: '0px 0px 1px #000, 0px 0px 2px #000' }}>
+            - {secondaryTitle}
+          </span>
         </h1>
       );
     }
     
     // If no dash found, render normally
-    return <h1 className="hero-title text-white" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>{title}</h1>;
+    return <h1 className="hero-title text-white" 
+               style={{ textShadow: '0px 0px 1px #000, 0px 0px 2px #000' }}>
+      {title}
+    </h1>;
   };
 
   // Set up automatic image rotation
@@ -113,12 +127,16 @@ const Hero: React.FC<HeroProps> = ({
       
       <div className="hero-content relative z-10">
         {renderTitle()}
-        {subtitle && <p className="hero-subtitle text-white" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>{subtitle}</p>}
+        {subtitle && <p className="hero-subtitle text-white" 
+                         style={{ textShadow: '0px 0px 1px #000, 0px 0px 2px #000' }}>
+          {subtitle}
+        </p>}
         
         {quote && renderQuote()}
         
         {supportText && (
-          <p className="text-lg md:text-xl text-white max-w-2xl mb-6 animate-fade-in" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
+          <p className="text-lg md:text-xl text-white max-w-2xl mb-6 animate-fade-in" 
+             style={{ textShadow: '0px 0px 1px #000, 0px 0px 2px #000' }}>
             {supportText}
           </p>
         )}
