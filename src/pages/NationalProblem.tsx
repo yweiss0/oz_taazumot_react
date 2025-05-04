@@ -144,7 +144,7 @@ const NationalProblem = () => {
               </div>
               <div className="p-4 bg-white text-right">
                 <p className="text-gray-800 font-medium">סרטון: פוסט-טראומה ודרכי התמודדות</p>
-                <p className="text-gray-600 text-sm">מקור: עֹז וְתַעֲצֻמוֹת</p>
+                {/* <p className="text-gray-600 text-sm">מקור: עֹז וְתַעֲצֻמוֹת</p> */}
               </div>
             </div>
           </div>
