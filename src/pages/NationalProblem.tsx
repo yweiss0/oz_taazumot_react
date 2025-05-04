@@ -128,6 +128,28 @@ const NationalProblem = () => {
           </div>
         </div>
         
+        {/* Google Drive Video */}
+        <div className="mb-16">
+          <h2 className="section-title">סרטון נוסף</h2>
+          <div className="flex justify-center">
+            <div className="w-full max-w-3xl shadow-lg rounded-lg overflow-hidden relative">
+              <div className="relative aspect-video">
+                <iframe 
+                  src="https://drive.google.com/file/d/1yEL4davStRjPQVJJwx5I7Ti4ki-xKbiK/preview" 
+                  className="absolute top-0 left-0 w-full h-full"
+                  allow="autoplay"
+                  allowFullScreen
+                  title="סרטון הסברה על פוסט-טראומה"
+                ></iframe>
+              </div>
+              <div className="p-4 bg-white text-right">
+                <p className="text-gray-800 font-medium">סרטון: פוסט-טראומה ודרכי התמודדות</p>
+                <p className="text-gray-600 text-sm">מקור: עֹז וְתַעֲצֻמוֹת</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div className="mb-16">
           <h2 className="section-title">כותרות מהעיתונות</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
