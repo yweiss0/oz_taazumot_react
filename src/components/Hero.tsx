@@ -46,15 +46,15 @@ const Hero: React.FC<HeroProps> = ({
       const citation = parts[1].trim();
       
       return (
-        <p className="text-xl md:text-2xl text-farm-green max-w-2xl mb-2 animate-fade-in font-semibold">
+        <p className="text-xl md:text-2xl text-white max-w-2xl mb-2 animate-fade-in font-semibold" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
           {mainText}{' '}
-          <span className="text-sm md:text-base">{citation}</span>
+          <span className="text-sm md:text-base" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>{citation}</span>
         </p>
       );
     }
     
     // If no citation format detected, render normally
-    return <p className="text-xl md:text-2xl text-farm-green max-w-2xl mb-2 animate-fade-in font-semibold">{quote}</p>;
+    return <p className="text-xl md:text-2xl text-white max-w-2xl mb-2 animate-fade-in font-semibold" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>{quote}</p>;
   };
 
   // Function to render title with second part in smaller text
@@ -66,15 +66,15 @@ const Hero: React.FC<HeroProps> = ({
       const secondaryTitle = parts.slice(1).join('-').trim();
       
       return (
-        <h1 className="hero-title">
+        <h1 className="hero-title text-white" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
           {mainTitle}{' '}
-          <span className="text-xl md:text-2xl">- {secondaryTitle}</span>
+          <span className="text-xl md:text-2xl" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>- {secondaryTitle}</span>
         </h1>
       );
     }
     
     // If no dash found, render normally
-    return <h1 className="hero-title">{title}</h1>;
+    return <h1 className="hero-title text-white" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>{title}</h1>;
   };
 
   // Set up automatic image rotation
@@ -98,7 +98,7 @@ const Hero: React.FC<HeroProps> = ({
             className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
             style={{
               backgroundImage: `url(${img})`,
-              opacity: currentImageIndex === index ? '0.4' : '0',
+              opacity: currentImageIndex === index ? '1' : '0',
               zIndex: 1
             }}
           />
@@ -106,16 +106,16 @@ const Hero: React.FC<HeroProps> = ({
       </div>
       
       {/* Gradient overlay to ensure text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-farm-green/40 to-transparent z-2"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-t from-farm-green/40 to-transparent z-2"></div> */}
       
       <div className="hero-content relative z-10">
         {renderTitle()}
-        {subtitle && <p className="hero-subtitle">{subtitle}</p>}
+        {subtitle && <p className="hero-subtitle text-white" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>{subtitle}</p>}
         
         {quote && renderQuote()}
         
         {supportText && (
-          <p className="text-lg md:text-xl text-farm-green max-w-2xl mb-6 animate-fade-in">
+          <p className="text-lg md:text-xl text-white max-w-2xl mb-6 animate-fade-in" style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
             {supportText}
           </p>
         )}
