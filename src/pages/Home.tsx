@@ -87,8 +87,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <h2 className="section-title text-blue-700">צמיחה מפוסט טראומה (PTG)    </h2>
-            <div className="prose prose-lg text-right mb-8 text-blue-700 text-2xl">
+        {/* <h2 className="section-title font-bold ">צמיחה מפוסט טראומה (PTG)    </h2> */}
+            <div className="prose prose-lg text-right mb-8  bg-farm-green-pale p-8 rounded-lg text-center">
+              <h2 className="section-title text-2xl font-bold mb-4">צמיחה מפוסט טראומה (PTG)</h2>
               <p>
               היא תהליך בו אנשים חווים שינויים פסיכולוגיים חיוביים בעקבות התמודדות עם אירועים טראומטיים. היא מובילה אותו לשינויים משמעותיים בתפיסת עצמו, יחסיו עם אחרים ובתפיסת עולמו.
 אחד התחומים המרכזיים של צמיחה הוא התחזקות אישית – תחושת כוח פנימי ויכולת להתמודד טוב יותר עם אתגרים עתידיים. אנשים רבים מדווחים על שיפור במערכות היחסים שלהם, חיבור רגשי עמוק יותר ותחושת חמלה מוגברת כלפי אחרים.

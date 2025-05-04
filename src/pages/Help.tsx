@@ -26,12 +26,13 @@ const Help = () => {
         <p className="mb-6">
           יחד אנחנו יכולים לעזור להם באמת.
         </p>
-        <blockquote className="border-r-4 border-green-600 pr-4 italic my-8">
+        <blockquote className=" pr-4 italic my-8">
           רוצים לעזור באמת? בואו להיות חלק.
           לא רק בכסף – בידיים, בזמן, בלב.
         </blockquote>
       </div>
-      <p className='text-blue-500 text-2xl mb-4 font-bold'>אנחנו מזמינים אתכם לתרום – חממות, ציוד חקלאי, ציוד השקיה, שתילים, פרחים, סככות, גנרטור, ריהוט גן, דשא סינטטי, אמנות ופיסול סביבתי, שתילי תבלין, מצללות, ספסלי קקל, כסאות , שולחנות,  – כל תרומה מחזקת את הלוחמים שלנו</p>
+      {/* <p className='text-blue-500 text-2xl mb-4 font-bold'>אנחנו מזמינים אתכם לתרום – חממות, ציוד חקלאי, ציוד השקיה, שתילים, פרחים, סככות, גנרטור, ריהוט גן, דשא סינטטי, אמנות ופיסול סביבתי, שתילי תבלין, מצללות, ספסלי קקל, כסאות , שולחנות,  – כל תרומה מחזקת את הלוחמים שלנו</p> */}
+      <div className="prose prose-lg  mb-8  bg-farm-green-pale p-8 rounded-lg text-center text-2xl font-bold">אנחנו מזמינים אתכם לתרום – חממות, ציוד חקלאי, ציוד השקיה, שתילים, פרחים, סככות, גנרטור, ריהוט גן, דשא סינטטי, אמנות ופיסול סביבתי, שתילי תבלין, מצללות, ספסלי קקל, כסאות , שולחנות, – כל תרומה מחזקת את הלוחמים שלנו</div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white p-6 rounded-lg shadow-md">
