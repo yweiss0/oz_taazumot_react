@@ -130,7 +130,7 @@ const NationalProblem = () => {
         
         {/* Google Drive Video */}
         <div className="mb-16">
-          <h2 className="section-title">סרטון נוסף</h2>
+          <h2 className="section-title">פרופ עוז גוטרמן: צמיחה מ PTSD </h2>
           <div className="flex justify-center">
             <div className="w-full max-w-3xl shadow-lg rounded-lg overflow-hidden relative">
               <div className="relative aspect-video">
