@@ -51,6 +51,15 @@ const Footer: React.FC = () => {
               <MapPin className="h-5 w-5 ml-2" />
             </a>
             <a 
+              href="https://waze.com/ul?q=חוות%20עוז%20ותעצומות&navigate=yes" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center justify-end hover:text-farm-green-pale transition-colors mb-2"
+            >
+              <span className="ml-2">הגעה בווייז "חוות עוז ותעצומות"</span>
+              <img src="/waze-icon.png" alt="Waze" className="h-5 w-5 ml-2" />
+            </a>
+            <a 
               href="https://www.facebook.com/OZ.TAAZUMOT" 
               target="_blank" 
               rel="noopener noreferrer" 
