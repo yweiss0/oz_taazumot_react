@@ -30,6 +30,9 @@ const Hero: React.FC<HeroProps> = ({
     '/background4.jpeg',
     '/background5.jpeg',
     '/background6.jpeg',
+    '/background7.jpeg',
+    '/background8.jpeg',
+    '/background9.jpeg',
   ];
 
   // State to track current image index
