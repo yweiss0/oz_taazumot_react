@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PageHeader from '@/components/PageHeader';
 import { Card, CardContent } from '@/components/ui/card';
-import { X } from 'lucide-react';
+import { X, Play } from 'lucide-react';
 
 const NationalProblem = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const newsImages = [
     {
@@ -55,6 +57,13 @@ const NationalProblem = () => {
     document.body.style.overflow = 'auto';
   };
 
+  const handleVideoPlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsVideoPlaying(true);
+    }
+  };
+
   return (
     <div>
       <PageHeader 
@@ -97,6 +106,24 @@ const NationalProblem = () => {
             <div className="bg-white p-6 rounded-lg shadow">
               <p className="text-4xl font-bold text-farm-green mb-2">80%</p>
               <p className="text-gray-700">שיפור בעקבות טיפול בסביבה טבעית</p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Kan News Video Link */}
+        <div className="mb-16">
+          <h2 className="section-title">כתבה מהתקשורת</h2>
+          <div className="flex justify-center">
+            <div className="w-full max-w-3xl shadow-lg rounded-lg overflow-hidden">
+              <div className="relative">
+                <a href="https://www.kan.org.il/content/kan-news/newstv/p-11894/s1/833126/" target="_blank" rel="noopener noreferrer" className="block">
+                  <img src="/thumbnail.png" alt="לצפייה בכתבה - החיילים שהמלחמה פצעה את נפשם" className="w-full" />
+                </a>
+              </div>
+              <div className="p-4 bg-white text-right">
+                <p className="text-gray-800 font-medium">כתבה: מתוך 5,000 - החיילים שהמלחמה פצעה את נפשם</p>
+                <p className="text-gray-600 text-sm">מקור: כאן חדשות</p>
+              </div>
             </div>
           </div>
         </div>
