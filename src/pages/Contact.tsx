@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageHeader from '@/components/PageHeader';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,6 +6,32 @@ import { Textarea } from '@/components/ui/textarea';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData as any).toString()
+    })
+      .then(() => {
+        setIsSubmitted(true);
+        setIsSubmitting(false);
+        form.reset();
+      })
+      .catch((error) => {
+        console.error('Form submission error:', error);
+        setIsSubmitting(false);
+      });
+  };
+
   return (
     <div>
       <PageHeader 
@@ -69,50 +95,63 @@ const Contact = () => {
           
           <div>
             <h2 className="section-title">השאירו פרטים</h2>
-            <form 
-              name="contact" 
-              method="POST" 
-              data-netlify="true" 
-              data-netlify-honeypot="bot-field"
-              className="space-y-6"
-            >
-              {/* Netlify Forms hidden inputs */}
-              <input type="hidden" name="form-name" value="contact" />
-              <div hidden>
-                <input name="bot-field" />
+            
+            {isSubmitted ? (
+              <div className="bg-green-50 border border-green-200 rounded-md p-6 text-right">
+                <h3 className="text-xl font-semibold text-farm-green mb-2">תודה על פנייתך!</h3>
+                <p className="text-gray-700">ההודעה נשלחה בהצלחה. ניצור איתך קשר בהקדם.</p>
               </div>
+            ) : (
+              <form 
+                name="contact" 
+                method="POST" 
+                data-netlify="true" 
+                data-netlify-honeypot="bot-field"
+                className="space-y-6"
+                onSubmit={handleSubmit}
+              >
+                {/* Netlify Forms hidden inputs */}
+                <input type="hidden" name="form-name" value="contact" />
+                <div hidden>
+                  <input name="bot-field" />
+                </div>
 
-              <div className="space-y-2">
-                <label htmlFor="name" className="block text-farm-green font-medium text-right">שם מלא</label>
-                <Input id="name" name="name" dir="rtl" className="border-farm-earth-pale" required />
-              </div>
-              
-              <div className="space-y-2">
-                <label htmlFor="email" className="block text-farm-green font-medium text-right">דוא"ל</label>
-                <Input id="email" name="email" type="email" dir="rtl" className="border-farm-earth-pale" required />
-              </div>
-              
-              <div className="space-y-2">
-                <label htmlFor="phone" className="block text-farm-green font-medium text-right">טלפון</label>
-                <Input id="phone" name="phone" type="tel" dir="rtl" className="border-farm-earth-pale" />
-              </div>
-              
-              <div className="space-y-2">
-                <label htmlFor="subject" className="block text-farm-green font-medium text-right">נושא</label>
-                <Input id="subject" name="subject" dir="rtl" className="border-farm-earth-pale" required />
-              </div>
-              
-              <div className="space-y-2">
-                <label htmlFor="message" className="block text-farm-green font-medium text-right">הודעה</label>
-                <Textarea id="message" name="message" rows={5} dir="rtl" className="border-farm-earth-pale" required />
-              </div>
-              
-              <div className="flex justify-end">
-                <Button type="submit" className="bg-farm-green hover:bg-farm-green-light text-white">
-                  שלח הודעה
-                </Button>
-              </div>
-            </form>
+                <div className="space-y-2">
+                  <label htmlFor="name" className="block text-farm-green font-medium text-right">שם מלא</label>
+                  <Input id="name" name="name" dir="rtl" className="border-farm-earth-pale" required />
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="email" className="block text-farm-green font-medium text-right">דוא"ל</label>
+                  <Input id="email" name="email" type="email" dir="rtl" className="border-farm-earth-pale" required />
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="phone" className="block text-farm-green font-medium text-right">טלפון</label>
+                  <Input id="phone" name="phone" type="tel" dir="rtl" className="border-farm-earth-pale" />
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="subject" className="block text-farm-green font-medium text-right">נושא</label>
+                  <Input id="subject" name="subject" dir="rtl" className="border-farm-earth-pale" required />
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="message" className="block text-farm-green font-medium text-right">הודעה</label>
+                  <Textarea id="message" name="message" rows={5} dir="rtl" className="border-farm-earth-pale" required />
+                </div>
+                
+                <div className="flex justify-end">
+                  <Button 
+                    type="submit" 
+                    className="bg-farm-green hover:bg-farm-green-light text-white"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'שולח...' : 'שלח הודעה'}
+                  </Button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
         
