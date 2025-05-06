@@ -69,30 +69,42 @@ const Contact = () => {
           
           <div>
             <h2 className="section-title">השאירו פרטים</h2>
-            <form className="space-y-6">
+            <form 
+              name="contact" 
+              method="POST" 
+              data-netlify="true" 
+              data-netlify-honeypot="bot-field"
+              className="space-y-6"
+            >
+              {/* Netlify Forms hidden inputs */}
+              <input type="hidden" name="form-name" value="contact" />
+              <div hidden>
+                <input name="bot-field" />
+              </div>
+
               <div className="space-y-2">
                 <label htmlFor="name" className="block text-farm-green font-medium text-right">שם מלא</label>
-                <Input id="name" dir="rtl" className="border-farm-earth-pale" />
+                <Input id="name" name="name" dir="rtl" className="border-farm-earth-pale" required />
               </div>
               
               <div className="space-y-2">
                 <label htmlFor="email" className="block text-farm-green font-medium text-right">דוא"ל</label>
-                <Input id="email" type="email" dir="rtl" className="border-farm-earth-pale" />
+                <Input id="email" name="email" type="email" dir="rtl" className="border-farm-earth-pale" required />
               </div>
               
               <div className="space-y-2">
                 <label htmlFor="phone" className="block text-farm-green font-medium text-right">טלפון</label>
-                <Input id="phone" type="tel" dir="rtl" className="border-farm-earth-pale" />
+                <Input id="phone" name="phone" type="tel" dir="rtl" className="border-farm-earth-pale" />
               </div>
               
               <div className="space-y-2">
                 <label htmlFor="subject" className="block text-farm-green font-medium text-right">נושא</label>
-                <Input id="subject" dir="rtl" className="border-farm-earth-pale" />
+                <Input id="subject" name="subject" dir="rtl" className="border-farm-earth-pale" required />
               </div>
               
               <div className="space-y-2">
                 <label htmlFor="message" className="block text-farm-green font-medium text-right">הודעה</label>
-                <Textarea id="message" rows={5} dir="rtl" className="border-farm-earth-pale" />
+                <Textarea id="message" name="message" rows={5} dir="rtl" className="border-farm-earth-pale" required />
               </div>
               
               <div className="flex justify-end">
