@@ -66,6 +66,16 @@ const Contact = () => {
               
               <div className="flex items-center justify-end">
                 <div className="text-right">
+                  <p className="font-semibold text-farm-green">העמותה</p>
+                  <p className="text-gray-700" dir="ltr">+972 50-523-2631</p>
+                </div>
+                <div className="bg-farm-green-pale p-3 rounded-full mr-4">
+                  <Phone className="h-6 w-6 text-farm-green" />
+                </div>
+              </div>
+              
+              <div className="flex items-center justify-end">
+                <div className="text-right">
                   <p className="font-semibold text-farm-green">דוא"ל</p>
                   <p className="text-gray-700" dir="ltr">oz.nefesh@gmail.com</p>
                 </div>
