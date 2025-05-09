@@ -85,8 +85,8 @@ const Gallery = () => {
     { id: "1muy2T7qqe1zGEU69_dARlyxY0k6HA35u", type: "video", alt: "וידאו 1" },
    
     
-    { id: "1yi8BIkDGwAnnZEkG36QG7t2M_uF8hXrS", type: "video", alt: "וידאו 4" },
-    { id: "1KORO5w95xyxn_9jBk8jArym9yWOYpYgA", type: "video", alt: "5" },
+    { id: "1yEL4davStRjPQVJJwx5I7Ti4ki-xKbiK", type: "video", alt: "וידאו 4" },
+    // { id: "1KORO5w95xyxn_9jBk8jArym9yWOYpYgA", type: "video", alt: "5" },
     
   ];
 
