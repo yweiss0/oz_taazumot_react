@@ -106,6 +106,9 @@ const Home = () => {
             <p className="text-xl md:text-2xl text-farm-green mb-4">
               הלוחמים לא נשארים לבד
             </p>
+            <p className="text-xl md:text-2xl text-farm-green mb-4 font-bold font-david">
+            עִמּוֹ אָנֹכִי בְצָרָה אֲחַלְּצֵהוּ וַאֲכַבְּדֵהוּ. <span className="text-sm md:text-base">תהלים צא  15</span>
+            </p>
             <p className="text-lg md:text-xl text-farm-earth mb-6">
               חווה טיפולית להלומי קרב – צמיחה אמיתית מהלב ומהאדמה
             </p>

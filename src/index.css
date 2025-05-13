@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap');
+/* Adding David font for Hebrew text */
+@import url('https://fonts.maaot.com/david.css');
 
 @tailwind base;
 @tailwind components;

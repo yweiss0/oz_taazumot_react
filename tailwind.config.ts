@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -69,6 +68,9 @@ export default {
 						light: '#E5EDF7',
 					}
 				}
+			},
+			fontFamily: {
+				'david': ['David', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
