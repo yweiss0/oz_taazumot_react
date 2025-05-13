@@ -21,10 +21,18 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-farm-green text-white py-8 mt-12">
       <div className="container max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-right">
             <h3 className="text-xl font-bold mb-4">עֹז וְתַעֲצֻמוֹת</h3>
             <p className="text-farm-green-pale">חווה חקלאית לשיקום הלומי קרב</p>
+          </div>
+          
+          <div className="text-center mx-auto border-2 border-red-600 p-4 rounded-lg font-bold bg-red-600 text-white">
+            <p className="text-black font-bold text-xl">
+              תיאום מועדי הגעה לצורך ויסות כמויות המבקרים, יש לשלוח הודעת וואטסאפ מקדימה לטלפון 052-4434350
+              <br />
+              אין להגיע לחווה ללא תיאום מוקדם.
+            </p>
           </div>
           
           <div className="text-right">
