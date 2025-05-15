@@ -16,6 +16,7 @@ import Thanks from "./pages/Thanks";
 import NotFound from "./pages/NotFound";
 import ProfOzVideo from "./pages/ProfOzVideo";
 import OpenInvitation from "./pages/OpenInvitation";
+import ChenBarin from "./pages/ChenBarin";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/prof-oz-video" element={<Layout><ProfOzVideo /></Layout>} />
           <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
           <Route path="/open-invitation" element={<Layout><OpenInvitation /></Layout>} />
+          <Route path="/chen-barin" element={<Layout><ChenBarin /></Layout>} />
           <Route path="/thanks" element={<Layout><Thanks /></Layout>} />
           <Route path="/help" element={<Layout><Help /></Layout>} />
           <Route path="/organization" element={<Layout><Organization /></Layout>} />
