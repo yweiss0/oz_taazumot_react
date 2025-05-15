@@ -87,6 +87,7 @@ const Gallery = () => {
     
     { id: "1yEL4davStRjPQVJJwx5I7Ti4ki-xKbiK", type: "video", alt: "וידאו 4" },
     { id: "1UTo-fVQuSNlajgmp8tLL7ktWSAZOqpBU", type: "video", alt: "5" },
+    { id: "9PRJgRZbLkk", type: "youtube", alt: "וידאו 6" },
     
   ];
 
@@ -165,14 +166,24 @@ const Gallery = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {galleryVideos.map((video, i) => (
                 <div key={i} className="aspect-video overflow-hidden rounded-lg shadow-md">
-                  <iframe
-                    src={`https://drive.google.com/file/d/${video.id}/preview?usp=sharing`}
-                    allow="autoplay; fullscreen; encrypted-media"
-                    allowFullScreen
-                    title={video.alt}
-                    className="w-full h-full border-0"
-                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-                  ></iframe>
+                  {video.type === "youtube" ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      title={video.alt}
+                      className="w-full h-full border-0"
+                    ></iframe>
+                  ) : (
+                    <iframe
+                      src={`https://drive.google.com/file/d/${video.id}/preview?usp=sharing`}
+                      allow="autoplay; fullscreen; encrypted-media"
+                      allowFullScreen
+                      title={video.alt}
+                      className="w-full h-full border-0"
+                      sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                    ></iframe>
+                  )}
                 </div>
               ))}
             </div>
