@@ -16,11 +16,16 @@ const LanguageSwitcher: React.FC = () => {
     <Button
       variant="outline"
       size="sm"
-      className="flex items-center gap-1 border-farm-green text-farm-green hover:bg-farm-green hover:text-white transition-colors"
+      className="flex items-center gap-1 border-farm-green text-farm-green hover:bg-farm-green hover:text-white transition-colors min-w-[60px] sm:min-w-[90px]"
       onClick={toggleLanguage}
     >
       <Globe className="h-4 w-4" />
-      {language === 'he' ? 'English' : 'עברית'}
+      <span className="hidden sm:inline">
+        {language === 'he' ? 'English' : 'עברית'}
+      </span>
+      <span className="sm:hidden">
+        {language === 'he' ? 'en' : 'עב'}
+      </span>
     </Button>
   );
 };

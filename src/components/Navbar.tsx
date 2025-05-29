@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
   };
 
   const navItems = [
-    { text: t('navbar.home'), path: '/' },
+    // { text: t('navbar.home'), path: '/' },
     { text: t('navbar.nationalProblem'), path: '/national-problem' },
     { text: t('navbar.natureTherapy'), path: '/nature-therapy' },
     { text: t('navbar.chenBarin'), path: '/chen-barin' },
@@ -30,44 +30,15 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-white border-b border-farm-earth-pale sticky top-0 z-50 shadow-sm">
       <div className="container max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <div className={`flex items-center ${isRTL ? 'space-x-4 space-x-reverse' : 'space-x-4'}`}>
-            <Link to="/" className="flex-shrink-0 flex items-center">
-              {/* Please upload your logo and replace the path below */}
-              <img 
-                src="/logo.jpeg" 
-                alt="עֹז וְתַעֲצֻמוֹת"
-                className="h-12 w-auto rounded-full"
-              />
-              <h1 className={`text-farm-green text-lg font-bold ${isRTL ? 'mr-3' : 'ml-3'}`}>
-                {t('footer.farm')}
-              </h1>
-            </Link>
-          </div>
-          
-          <div className="hidden md:flex md:items-center">
-            <div className={`flex items-center ${isRTL ? 'space-x-4 space-x-reverse ml-4' : 'space-x-4 mr-4'}`}>
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`px-3 py-2 text-farm-green hover:text-farm-green-light hover:underline transition-colors text-sm font-medium ${isRTL ? 'text-right' : 'text-left'}`}
-                >
-                  {item.text}
-                </Link>
-              ))}
-            </div>
-            <LanguageSwitcher />
-          </div>
-          
-          <div className="md:hidden flex items-center">
-            <LanguageSwitcher />
+        {/* Top row with logo and language switcher */}
+        <div className="relative h-16 flex items-center">
+          {/* Mobile menu button - position changes based on language */}
+          <div className={`md:hidden absolute ${isRTL ? 'left-0' : 'right-0'}`}>
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleMobileMenu}
               aria-label="Toggle menu"
-              className="ml-2"
             >
               {mobileMenuOpen ? (
                 <X className="h-6 w-6 text-farm-green" />
@@ -75,6 +46,76 @@ const Navbar: React.FC = () => {
                 <Menu className="h-6 w-6 text-farm-green" />
               )}
             </Button>
+          </div>
+          
+          {/* Logo, title, and language switcher with fixed positioning */}
+          <div className="absolute right-0 flex items-center w-[220px] md:w-[350px]" style={{ height: '48px', position: 'relative' }}>
+            {isRTL ? (
+              <>
+                {/* Hebrew (RTL): Button - Text - Logo (right to left) */}
+                {/* Language button - leftmost in RTL */}
+                <div style={{ position: 'absolute', left: '0px', top: '50%', transform: 'translateY(-50%)' }}>
+                  <LanguageSwitcher />
+                </div>
+                
+                {/* Title - middle in RTL */}
+                <Link to="/" className="absolute left-[70px] md:left-[130px] top-1/2 -translate-y-1/2 flex items-center">
+                  <h1 className="text-farm-green text-lg font-bold" dir="rtl">
+                    {t('footer.farm')}
+                  </h1>
+                </Link>
+                
+                {/* Logo - rightmost in RTL */}
+                <div style={{ position: 'absolute', right: '0px', top: '50%', transform: 'translateY(-50%)' }}>
+                  <img 
+                    src="/logo.jpeg" 
+                    alt="עֹז וְתַעֲצֻמוֹת"
+                    className="h-12 w-12 rounded-full object-cover"
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                {/* English (LTR): Logo - Text - Button (left to right) */}
+                {/* Logo - leftmost in LTR */}
+                <div style={{ position: 'absolute', left: '0px', top: '50%', transform: 'translateY(-50%)' }}>
+                  <img 
+                    src="/logo.jpeg" 
+                    alt="עֹז וְתַעֲצֻמוֹת"
+                    className="h-12 w-12 rounded-full object-cover"
+                  />
+                </div>
+                
+                {/* Title - close to logo */}
+                <Link to="/" className="absolute left-[55px] md:left-[70px] top-1/2 -translate-y-1/2 flex items-center">
+                  <h1 className="text-farm-green text-lg font-bold" dir="ltr">
+                    {t('footer.farm')}
+                  </h1>
+                </Link>
+                
+                {/* Language button - rightmost in LTR */}
+                <div style={{ position: 'absolute', right: '-60px', top: '50%', transform: 'translateY(-50%)' }}>
+                  <LanguageSwitcher />
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+        
+        {/* Desktop navigation row */}
+        <div className="hidden md:block border-t border-farm-earth-pale">
+          <div className="flex justify-center items-center py-3">
+            <div className="flex items-center gap-6">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="px-3 py-2 text-farm-green hover:text-farm-green-light hover:underline transition-colors text-sm font-medium"
+                >
+                  {item.text}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
