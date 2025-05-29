@@ -8,6 +8,78 @@ const NatureTherapy = () => {
   const { t } = useTranslation();
   const { isRTL } = useLanguage();
   
+  // Research links mapping
+  const researchLinks = {
+    card1: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11571177/',
+    card2: 'https://etgarim.org/wp-content/uploads/2023/06/Shi-shorer-2023-Long-Term-Group-Nature-Assisted-Therapy-for-Veterans-Diagnosed-with-Chronic-PTSD.pdf',
+    card3: 'https://www.jpost.com/opinion/article-826515',
+    card4: 'https://www.camoni.co.il/%D7%9B%D7%9A-%D7%9E%D7%A9%D7%A4%D7%99%D7%A2-%D7%98%D7%91%D7%A2-%D7%99%D7%A8%D7%95%D7%A7-%D7%A2%D7%9C-%D7%94%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA-%D7%A9%D7%9C%D7%A0%D7%95',
+    card5: 'https://www.betipulnet.co.il/particles/The_resilience_in_nature',
+    card6: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8405544/'
+  };
+
+  const renderIntroWithLinks = (text: string) => {
+    // Add link to "nature magazine" or equivalent in Hebrew
+    const natureMagazineLink = 'https://www.nature.com/articles/s41598-023-49702-0';
+    
+    // More flexible patterns for nature magazine
+    let result = text.replace(
+      /Nature magazine|מגזין Nature|nature magazine|Nature Magazine|מגזין נייצ'ר|נייצ'ר|Nature/gi,
+      `<a href="${natureMagazineLink}" target="_blank" rel="noopener noreferrer" class="text-farm-green hover:text-farm-green-light underline font-semibold">$&</a>`
+    );
+    
+    return result;
+  };
+
+  const getLinkText = (cardKey: string) => {
+    const link = researchLinks[cardKey as keyof typeof researchLinks];
+    if (!link) return '';
+    
+    const linkText = isRTL ? 'למאמר המלא' : 'read the article';
+    return ` <a href="${link}" target="_blank" rel="noopener noreferrer" class="text-farm-green hover:text-farm-green-light underline font-semibold">${linkText}</a>`;
+  };
+
+  const renderCardWithLink = (content: string, cardKey: string) => {
+    const link = researchLinks[cardKey as keyof typeof researchLinks];
+    if (!link) return content;
+
+    // Hebrew link text patterns - more flexible
+    const linkPatterns = {
+      card1: /לקריאת המחקר|קרא עוד|מחקר נוסף/g,
+      card2: /למאמר המלא|מאמר מלא|לקריאה נוספת/g, 
+      card3: /מאמר jerusalem post|ג'רוזלם פוסט|Jerusalem Post|jerusalem post/gi,
+      card4: /לקריאת המחקר|קרא עוד|מחקר נוסף/g,
+      card5: /בטיפולנט(?![א-ת])/g,
+      card6: /לקריאת המחקר|קרא עוד|מחקר נוסף/g
+    };
+
+    // English link text patterns  
+    const englishLinkPatterns = {
+      card1: /read the research|research study|read more|study details/gi,
+      card2: /full article|complete study|read full paper|full paper/gi,
+      card3: /Jerusalem Post |news article|Jerusalem Post|jpost article/gi,
+      card4: /read the research|research findings|read more|study results/gi,
+      card5: /betipulnet(?![a-z])|therapy website|counseling site|therapy site/gi,
+      card6: /read the research|study results|read more|research findings/gi
+    };
+
+    let result = content;
+    
+    // Apply Hebrew patterns
+    const hebrewPattern = linkPatterns[cardKey as keyof typeof linkPatterns];
+    if (hebrewPattern) {
+      result = result.replace(hebrewPattern, `<a href="${link}" target="_blank" rel="noopener noreferrer" class="text-farm-green hover:text-farm-green-light underline font-semibold">$&</a>`);
+    }
+
+    // Apply English patterns
+    const englishPattern = englishLinkPatterns[cardKey as keyof typeof englishLinkPatterns];
+    if (englishPattern) {
+      result = result.replace(englishPattern, `<a href="${link}" target="_blank" rel="noopener noreferrer" class="text-farm-green hover:text-farm-green-light underline font-semibold">$&</a>`);
+    }
+
+    return result;
+  };
+  
   return (
     <div>
       {/* Hero Section */}
@@ -33,15 +105,18 @@ const NatureTherapy = () => {
         <div className="max-w-4xl mx-auto mb-16">
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-bold text-farm-green mb-6 text-center">{t('natureTherapy.intro.title')}</h2>
-            <p className={`${isRTL ? 'text-right' : 'text-left'} mb-4`}>
-              {t('natureTherapy.intro.paragraph1')}
-            </p>
-            <p className={`${isRTL ? 'text-right' : 'text-left'} mb-4`}>
-              {t('natureTherapy.intro.paragraph2')}
-            </p>
-            <p className={`${isRTL ? 'text-right' : 'text-left'}`}>
-              {t('natureTherapy.intro.paragraph3')}
-            </p>
+            <div 
+              className={`${isRTL ? 'text-right' : 'text-left'} mb-4`}
+              dangerouslySetInnerHTML={{ __html: renderIntroWithLinks(t('natureTherapy.intro.paragraph1')) }}
+            />
+            <div 
+              className={`${isRTL ? 'text-right' : 'text-left'} mb-4`}
+              dangerouslySetInnerHTML={{ __html: t('natureTherapy.intro.paragraph2') }}
+            />
+            <div 
+              className={`${isRTL ? 'text-right' : 'text-left'}`}
+              dangerouslySetInnerHTML={{ __html: t('natureTherapy.intro.paragraph3') }}
+            />
           </div>
         </div>
         
@@ -49,54 +124,21 @@ const NatureTherapy = () => {
         <div className="mb-16 bg-gray-50 py-12 px-6 rounded-xl">
           <h2 className="text-3xl font-bold text-farm-green mb-10 text-center">{t('natureTherapy.research.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            <Card className="card border-0 shadow-md hover:shadow-lg transition-shadow">
-              <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
-                <h3 className="text-xl font-bold mb-4 text-farm-green">{t('natureTherapy.research.card1.title')}</h3>
-                <p className="text-gray-700">
-                  {t('natureTherapy.research.card1.content')}
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="card border-0 shadow-md hover:shadow-lg transition-shadow">
-              <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
-                <h3 className="text-xl font-bold mb-4 text-farm-green">{t('natureTherapy.research.card2.title')}</h3>
-                <p className="text-gray-700">
-                  {t('natureTherapy.research.card2.content')}
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="card border-0 shadow-md hover:shadow-lg transition-shadow">
-              <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
-                <h3 className="text-xl font-bold mb-4 text-farm-green">{t('natureTherapy.research.card3.title')}</h3>
-                <p className="text-gray-700">
-                  {t('natureTherapy.research.card3.content')}
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="card border-0 shadow-md hover:shadow-lg transition-shadow">
-              <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
-                <h3 className="text-xl font-bold mb-4 text-farm-green">{t('natureTherapy.research.card4.title')}</h3>
-                <p className="text-gray-700">
-                  {t('natureTherapy.research.card4.content')}
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="card border-0 shadow-md hover:shadow-lg transition-shadow">
-              <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
-                <h3 className="text-xl font-bold mb-4 text-farm-green">{t('natureTherapy.research.card5.title')}</h3>
-                <p className="text-gray-700">
-                  {t('natureTherapy.research.card5.content')}
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="card border-0 shadow-md hover:shadow-lg transition-shadow">
-              <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
-                <h3 className="text-xl font-bold mb-4 text-farm-green">{t('natureTherapy.research.card6.title')}</h3>
-                <p className="text-gray-700">
-                  {t('natureTherapy.research.card6.content')}
-                </p>
-              </CardContent>
-            </Card>
+            {[1, 2, 3, 4, 5, 6].map((cardNum) => (
+              <Card key={cardNum} className="card border-0 shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
+                  <h3 className="text-xl font-bold mb-4 text-farm-green">
+                    {t(`natureTherapy.research.card${cardNum}.title`)}
+                  </h3>
+                  <div 
+                    className="text-gray-700"
+                    dangerouslySetInnerHTML={{ 
+                      __html: t(`natureTherapy.research.card${cardNum}.content`) + getLinkText(`card${cardNum}`) 
+                    }}
+                  />
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 

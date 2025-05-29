@@ -161,34 +161,34 @@ const enTranslations = {
     intro: {
       title: "The Healing Power of Nature",
       paragraph1: "We believe that connection to the earth and nature is an essential part of the healing and rehabilitation process. The combination of physical activity, exposure to green space, and group support is found to be particularly significant for trauma-affected populations.",
-      paragraph2: "Recent studies show that spending time in nature helps reduce symptoms of post-traumatic stress disorder (PTSD), anxiety, and depression, and contributes to strengthening mental and physiological resilience (Nature magazine).",
-      paragraph3: "Research shows that regular time in nature improves mood, reduces mental stress, depression, and anxiety, and even strengthens the immune system. Significant improvement in these measures was found in people who spend at least two hours a week in nature (Read the research)."
+      paragraph2: "Recent studies show that spending time in nature helps reduce symptoms of post-traumatic stress disorder (PTSD), anxiety, and depression, and contributes to strengthening mental and physiological resilience (<a href='https://www.nature.com/articles/s41598-023-49702-0' target='_blank' rel='noopener noreferrer' class='text-farm-green hover:text-farm-green-light underline font-semibold'>Nature magazine</a>).",
+      paragraph3: "Research shows that regular time in nature improves mood, reduces mental stress, depression, and anxiety, and even strengthens the immune system. Significant improvement in these measures was found in people who spend at least two hours a week in nature (<a href='https://www.camoni.co.il/%D7%9B%D7%9A-%D7%9E%D7%A9%D7%A4%D7%99%D7%A2-%D7%98%D7%91%D7%A2-%D7%99%D7%A8%D7%95%D7%A7-%D7%A2%D7%9C-%D7%94%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA-%D7%A9%D7%9C%D7%A0%D7%95' target='_blank' rel='noopener noreferrer' class='text-farm-green hover:text-farm-green-light underline font-semibold'>read the article</a>)."
     },
     research: {
       title: "Spending Time in Nature as a Solution for PTSD",
       card1: {
         title: "Reducing PTSD Symptoms Through Nature Activities",
-        content: "Studies show that nature activities such as walking, camping, and mountain hiking help reduce symptoms of post-traumatic stress disorder (PTSD), especially among veterans. A study compared walking groups in nature versus urban environments and found a more significant decrease in PTSD symptoms in participants who spent time in nature. (Read the research)"
+        content: "Studies show that nature activities such as walking, camping, and mountain hiking help reduce symptoms of post-traumatic stress disorder (PTSD), especially among veterans. A study compared walking groups in nature versus urban environments and found a more significant decrease in PTSD symptoms in participants who spent time in nature."
       },
       card2: {
         title: "Combining Group and Adventure Therapy in Nature",
-        content: "An Israeli case article presents a group-adventure treatment program for IDF veterans with chronic PTSD, where spending time in nature served as a catalyst for change. Participants developed new coping skills, strengthened a sense of belonging, and reduced feelings of shame and stigma. (Full article)"
+        content: "An Israeli case article presents a group-adventure treatment program for IDF veterans with chronic PTSD, where spending time in nature served as a catalyst for change. Participants developed new coping skills, strengthened a sense of belonging, and reduced feelings of shame and stigma."
       },
       card3: {
         title: "Ecotherapy and Emotional Recovery",
-        content: "The 'Ecotherapy' approach is gaining recognition as an effective treatment model for trauma. Spending time in nature, especially in wild spaces, helps with emotional processing, stress reduction, strengthening mental resilience, and increasing a sense of connection to self and the world. (Jerusalem Post article)"
+        content: "The 'Ecotherapy' approach is gaining recognition as an effective treatment model for trauma. Spending time in nature, especially in wild spaces, helps with emotional processing, stress reduction, strengthening mental resilience, and increasing a sense of connection to self and the world. "
       },
       card4: {
         title: "Reducing Stress, Depression, and Anxiety",
-        content: "Regular exposure to nature improves mood, reduces mental stress, depression, and anxiety, and even strengthens the immune system. Studies indicate improvements of dozens of percentages in these measures in people who spend at least two hours a week in nature. (Read the research)"
+        content: "Regular exposure to nature improves mood, reduces mental stress, depression, and anxiety, and even strengthens the immune system. Studies indicate improvements of dozens of percentages in these measures in people who spend at least two hours a week in nature. "
       },
       card5: {
         title: "Strengthening Mental and Physiological Resilience",
-        content: "Spending time in nature contributes to building psycho-physiological resilience, increases a sense of vitality and energy, and helps reduce negative thoughts. Therefore, it is recommended as a therapeutic tool for people experiencing high stress or emotional difficulties. (Betipulnet)"
+        content: "Spending time in nature contributes to building psycho-physiological resilience, increases a sense of vitality and energy, and helps reduce negative thoughts. Therefore, it is recommended as a therapeutic tool for people experiencing high stress or emotional difficulties."
       },
       card6: {
         title: "Direct Link Between Outdoor Time and Decrease in PTSD Symptoms",
-        content: "A study among veterans found that the more time they spent outside the home, the more their post-traumatic symptoms decreased. Stress reduction theory explains that the human brain processes natural stimuli more easily, and therefore nature helps in cognitive and emotional rehabilitation. (Read the research)"
+        content: "A study among veterans found that the more time they spent outside the home, the more their post-traumatic symptoms decreased. Stress reduction theory explains that the human brain processes natural stimuli more easily, and therefore nature helps in cognitive and emotional rehabilitation. "
       }
     },
     methods: {
@@ -556,34 +556,34 @@ const heTranslations = {
     intro: {
       title: "כוחו המרפא של הטבע",
       paragraph1: "אנו מאמינים שהחיבור לאדמה ולטבע הוא חלק מהותי מתהליך הריפוי והשיקום. השילוב בין פעילות גופנית, חשיפה למרחב הירוק ותמיכה קבוצתית נמצא כמשמעותי במיוחד עבור אוכלוסיות פגועות טראומה.",
-      paragraph2: "מחקרים עדכניים מראים כי שהייה בטבע מסייעת להפחתת תסמיני פוסט טראומה (PTSD), חרדה ודיכאון, ותורמת לחיזוק החוסן הנפשי והפיזיולוגי (Nature magazine).",
-      paragraph3: "המחקרים מראים כי שהייה סדירה בטבע משפרת את מצב הרוח, מפחיתה לחץ נפשי, דיכאון וחרדה, ואף מחזקת את המערכת החיסונית. נמצא שיפור משמעותי במדדים אלו אצל אנשים שמבלים לפחות שעתיים בשבוע בטבע (לקריאת המחקר)."
+      paragraph2: "מחקרים עדכניים מראים כי שהייה בטבע מסייעת להפחתת תסמיני פוסט טראומה (PTSD), חרדה ודיכאון, ותורמת לחיזוק החוסן הנפשי והפיזיולוגי (<a href='https://www.nature.com/articles/s41598-023-49702-0' target='_blank' rel='noopener noreferrer' class='text-farm-green hover:text-farm-green-light underline font-semibold'>Nature magazine</a>).",
+      paragraph3: "המחקרים מראים כי שהייה סדירה בטבע משפרת את מצב הרוח, מפחיתה לחץ נפשי, דיכאון וחרדה, ואף מחזקת את המערכת החיסונית. נמצא שיפור משמעותי במדדים אלו אצל אנשים שמבלים לפחות שעתיים בשבוע בטבע (<a href='https://www.camoni.co.il/%D7%9B%D7%9A-%D7%9E%D7%A9%D7%A4%D7%99%D7%A2-%D7%98%D7%91%D7%A2-%D7%99%D7%A8%D7%95%D7%A7-%D7%A2%D7%9C-%D7%94%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA-%D7%A9%D7%9C%D7%A0%D7%95' target='_blank' rel='noopener noreferrer' class='text-farm-green hover:text-farm-green-light underline font-semibold'>לקריאת המחקר</a>)."
     },
     research: {
       title: "השהייה בטבע כפתרון לפוסט טראומה",
       card1: {
         title: "הפחתת תסמיני PTSD באמצעות פעילות בטבע",
-        content: "מחקרים מראים כי פעילויות בטבע כמו הליכה, קמפינג וטיולים הרריים מסייעות בהפחתת תסמיני פוסט טראומה (PTSD), במיוחד בקרב יוצאי צבא. מחקר השווה בין קבוצות הליכה בטבע לעומת סביבה עירונית, ומצא ירידה משמעותית יותר בתסמיני PTSD אצל המשתתפים ששהו בטבע. (לקריאת המחקר)"
+        content: "מחקרים מראים כי פעילויות בטבע כמו הליכה, קמפינג וטיולים הרריים מסייעות בהפחתת תסמיני פוסט טראומה (PTSD), במיוחד בקרב יוצאי צבא. מחקר השווה בין קבוצות הליכה בטבע לעומת סביבה עירונית, ומצא ירידה משמעותית יותר בתסמיני PTSD אצל המשתתפים ששהו בטבע.  )"
       },
       card2: {
         title: "שילוב טיפול קבוצתי והרפתקני בטבע",
-        content: "מאמר מקרה ישראלי מציג תוכנית טיפול קבוצתית-הרפתקנית לוותיקי צה\"ל עם PTSD כרוני, בה השהייה בטבע שימשה קטליזטור לשינוי. המשתתפים פיתחו מיומנויות התמודדות חדשות, חיזקו תחושת שייכות והפחיתו תחושות בושה וסטיגמה. (למאמר המלא)"
+        content: "מאמר מקרה ישראלי מציג תוכנית טיפול קבוצתית-הרפתקנית לוותיקי צה\"ל עם PTSD כרוני, בה השהייה בטבע שימשה קטליזטור לשינוי. המשתתפים פיתחו מיומנויות התמודדות חדשות, חיזקו תחושת שייכות והפחיתו תחושות בושה וסטיגמה. "
       },
       card3: {
         title: "אקותרפיה והחלמה רגשית",
-        content: "הגישה של \"אקותרפיה\" (Ecotherapy) זוכה להכרה גוברת כמודל טיפולי יעיל לטיפול בטראומה. שהייה בטבע, במיוחד במרחבים פראיים, מסייעת לעיבוד רגשי, הפחתת סטרס, חיזוק חוסן נפשי והגברת תחושת החיבור לעצמי ולעולם. (מאמר Jerusalem Post)"
+        content: "הגישה של \"אקותרפיה\" (Ecotherapy) זוכה להכרה גוברת כמודל טיפולי יעיל לטיפול בטראומה. שהייה בטבע, במיוחד במרחבים פראיים, מסייעת לעיבוד רגשי, הפחתת סטרס, חיזוק חוסן נפשי והגברת תחושת החיבור לעצמי ולעולם. "
       },
       card4: {
         title: "הפחתת לחץ, דיכאון וחרדה",
-        content: "חשיפה סדירה לטבע משפרת את מצב הרוח, מפחיתה לחץ נפשי, דיכאון וחרדה, ואף מחזקת את המערכת החיסונית. מחקרים מצביעים על שיפור של עשרות אחוזים במדדים אלו אצל אנשים שמבלים לפחות שעתיים בשבוע בטבע. (לקריאת המחקר)"
+        content: "חשיפה סדירה לטבע משפרת את מצב הרוח, מפחיתה לחץ נפשי, דיכאון וחרדה, ואף מחזקת את המערכת החיסונית. מחקרים מצביעים על שיפור של עשרות אחוזים במדדים אלו אצל אנשים שמבלים לפחות שעתיים בשבוע בטבע. "
       },
       card5: {
         title: "חיזוק חוסן נפשי ופיזיולוגי",
-        content: "שהייה בטבע תורמת לבניית חוסן פסיכו-פיזיולוגי, מגבירה תחושת חיוניות ואנרגיה, ומסייעת להפחתת מחשבות שליליות. לכן, היא מומלצת ככלי טיפולי לאנשים החווים מתח גבוה או קשיים רגשיים. (בטיפולנט)"
+        content: "שהייה בטבע תורמת לבניית חוסן פסיכו-פיזיולוגי, מגבירה תחושת חיוניות ואנרגיה, ומסייעת להפחתת מחשבות שליליות. לכן, היא מומלצת ככלי טיפולי לאנשים החווים מתח גבוה או קשיים רגשיים. "
       },
       card6: {
         title: "קשר ישיר בין שהייה בחוץ לירידה בתסמיני PTSD",
-        content: "מחקר בקרב יוצאי צבא מצא כי ככל ששהו יותר זמן מחוץ לבית, כך פחתו תסמיני הפוסט טראומה. תיאוריית הפחתת הלחץ מסבירה כי המוח האנושי מעבד גירויים טבעיים בקלות רבה יותר, ולכן הטבע מסייע בשיקום הקוגניטיבי והרגשי. (לקריאת המחקר)"
+        content: "מחקר בקרב יוצאי צבא מצא כי ככל ששהו יותר זמן מחוץ לבית, כך פחתו תסמיני הפוסט טראומה. תיאוריית הפחתת הלחץ מסבירה כי המוח האנושי מעבד גירויים טבעיים בקלות רבה יותר, ולכן הטבע מסייע בשיקום הקוגניטיבי והרגשי. "
       }
     },
     methods: {
