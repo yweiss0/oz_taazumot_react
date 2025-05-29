@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface HeroProps {
   title: string;
@@ -21,6 +22,8 @@ const Hero: React.FC<HeroProps> = ({
   quote,
   supportText,
 }) => {
+  const { isRTL } = useLanguage();
+  
   // Images for carousel
   const carouselImages = [
     'https://images.unsplash.com/photo-1506744038136-46273834b3fb', // Original image

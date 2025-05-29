@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Help = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const { t } = useTranslation();
+  const { direction } = useLanguage();
   
   const openModal = (image: string) => {
     setSelectedImage(image);
@@ -16,58 +20,53 @@ const Help = () => {
   };
 
   return (
-    <div dir="rtl" className="py-8 max-w-4xl mx-auto px-4 text-center items-center">
-      <h1 className="text-3xl font-bold text-green-800 mb-6 text-center">בואו לעזור - לא צריך כסף!</h1>
+    <div dir={direction} className="py-8 max-w-4xl mx-auto px-4 text-center items-center">
+      <h1 className="text-3xl font-bold text-green-800 mb-6 text-center">{t('help.title')}</h1>
       
       <div className="prose prose-lg max-w-none text-gray-700 mb-8">
         <p className="mb-6">
-          החווה מזמינה אתכם לקחת חלק – בהתנדבות, בייעוץ, בתרומות או בכל דרך אחרת. לא רק בכסף – אלא בלב, בידיים ובעשייה.
+          {t('help.intro.paragraph1')}
         </p>
         <p className="mb-6">
-          יחד אנחנו יכולים לעזור להם באמת.
+          {t('help.intro.paragraph2')}
         </p>
-        <blockquote className=" pr-4 italic my-8">
-          רוצים לעזור באמת? בואו להיות חלק.
-          לא רק בכסף – בידיים, בזמן, בלב.
+        <blockquote className="pr-4 italic my-8">
+          {t('help.intro.quote')}
         </blockquote>
       </div>
       {/* <p className='text-blue-500 text-2xl mb-4 font-bold'>אנחנו מזמינים אתכם לתרום – חממות, ציוד חקלאי, ציוד השקיה, שתילים, פרחים, סככות, גנרטור, ריהוט גן, דשא סינטטי, אמנות ופיסול סביבתי, שתילי תבלין, מצללות, ספסלי קקל, כסאות , שולחנות,  – כל תרומה מחזקת את הלוחמים שלנו</p> */}
-      <div className="prose prose-lg  mb-8  bg-farm-green-pale p-8 rounded-lg text-center text-2xl font-bold">אנחנו מזמינים אתכם לתרום – חממות, ציוד חקלאי, ציוד השקיה, שתילים, פרחים, סככות, גנרטור, ריהוט גן, דשא סינטטי, אמנות ופיסול סביבתי, שתילי תבלין, מצללות, ספסלי קקל, כסאות , שולחנות, – כל תרומה מחזקת את הלוחמים שלנו</div>
+      <div className="prose prose-lg mb-8 bg-farm-green-pale p-8 rounded-lg text-center text-2xl font-bold">
+        {t('help.donationCallout')}
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl font-bold text-green-800 mb-4">דרכים להתנדבות</h2>
-          <ul className="list-disc list-inside space-y-3 text-gray-700">
-            <li>הגעה לימי עבודה מרוכזים בחווה</li>
-            <li>סיוע בטיפול בבעלי חיים</li>
-            <li>עזרה בעבודות חקלאיות עונתיות</li>
-            <li>הדרכה מקצועית בתחומים שונים</li>
-            <li>שיתוף בכישורים מיוחדים (מוזיקה, אמנות, בישול)</li>
-            <li>עזרה לוגיסטית בארגון אירועים</li>
+          <h2 className="text-2xl font-bold text-green-800 mb-4">{t('help.volunteering.title')}</h2>
+          <ul className={`list-disc list-inside space-y-3 text-gray-700 ${direction === 'rtl' ? 'text-right' : 'text-left'}`}>
+            {(t('help.volunteering.items', { returnObjects: true }) as string[]).map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl font-bold text-green-800 mb-4">תרומה בידע ומומחיות</h2>
-          <ul className="list-disc list-inside space-y-3 text-gray-700">
-            <li>ייעוץ מקצועי בתחומי החקלאות</li>
-            <li>תמיכה מקצועית בתחומי בריאות הנפש</li>
-            <li>סיוע בשיווק ויחסי ציבור</li>
-            <li>עזרה בפיתוח אתר האינטרנט</li>
-            <li>ייעוץ משפטי או עסקי</li>
-            <li>קשרים עם גורמים ממשלתיים או ארגונים</li>
+          <h2 className="text-2xl font-bold text-green-800 mb-4">{t('help.expertise.title')}</h2>
+          <ul className={`list-disc list-inside space-y-3 text-gray-700 ${direction === 'rtl' ? 'text-right' : 'text-left'}`}>
+            {(t('help.expertise.items', { returnObjects: true }) as string[]).map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </div>
       </div>
 
 
       <div className="bg-green-50 p-6 rounded-lg shadow-md mt-8">
-        <h2 className="text-2xl font-bold text-green-800 mb-4">צרו קשר להתנדבות</h2>
+        <h2 className="text-2xl font-bold text-green-800 mb-4">{t('help.contactCta.title')}</h2>
         <p className="text-gray-700 mb-6">
-          אנו מזמינים אתכם להצטרף אלינו ביוזמה ישראלית מרגשת שמחזירה אור לנשמות שנכוו. כל עזרה, קטנה כגדולה, יכולה לעשות שינוי אמיתי.
+          {t('help.contactCta.content')}
         </p>
         <Link to="/contact" className="inline-block bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-8 rounded-md text-lg transition-colors duration-300">
-          צרו קשר
+          {t('help.contactCta.button')}
         </Link>
       </div>
 

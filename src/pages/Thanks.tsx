@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import PageHeader from '@/components/PageHeader';
 import { X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Thanks = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const { t } = useTranslation();
+  const { direction } = useLanguage();
 
   const imageIds = [
     
@@ -33,8 +37,8 @@ const Thanks = () => {
   return (
     <div>
       <PageHeader 
-        title="תודות" 
-        subtitle="  תודות  מיוחדות שהחווה קיבלה  (רשימה חלקית)"
+        title={t('thanks.pageHeader.title')} 
+        subtitle={t('thanks.pageHeader.subtitle')}
       />
       
       <div className="page-container">
@@ -53,16 +57,16 @@ const Thanks = () => {
                 loading="lazy"
               ></iframe>
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10">
-                <p className="text-white text-lg font-semibold">לחץ להגדלת התמונה</p>
+                <p className="text-white text-lg font-semibold">{t('gallery.clickToEnlarge')}</p>
               </div>
             </div>
           ))}
         </div>
         
-        <div className="prose prose-lg max-w-none text-right mb-12">
-          <h2 className="text-2xl font-bold text-farm-green mb-4">תודה על התמיכה</h2>
+        <div className={`prose prose-lg max-w-none ${direction === 'rtl' ? 'text-right' : 'text-left'} mb-12`}>
+          <h2 className="text-2xl font-bold text-farm-green mb-4">{t('thanks.support.title')}</h2>
           <p>
-            אנו מודים לכל התומכים, המתנדבים והשותפים שלנו שמאפשרים לנו להמשיך בפעילות החשובה של החווה.
+            {t('thanks.support.content')}
           </p>
         </div>
       </div>

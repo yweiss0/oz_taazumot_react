@@ -2,8 +2,12 @@ import React, { useState, useRef } from 'react';
 import PageHeader from '@/components/PageHeader';
 import { Card, CardContent } from '@/components/ui/card';
 import { X, Play } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const NationalProblem = () => {
+  const { t } = useTranslation();
+  const { isRTL } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -11,39 +15,39 @@ const NationalProblem = () => {
   const newsImages = [
     {
       image: "/488502120_670400372031915_7458710229177102403_n.jpg",
-      title: "המדינה מדממת - השרים והפקידות בהלם קרב",
-      date: "19/11/2023",
-      source: "וואלה"
+      title: t('nationalProblem.newsItems.0.title'),
+      date: t('nationalProblem.newsItems.0.date'),
+      source: t('nationalProblem.newsItems.0.source')
     },
     {
       image: "/488615010_670400312031921_5626379578177632541_n.jpg",
-      title: "בעקבות המלחמה: עלייה חדה במספר נפגעי פוסט-טראומה",
-      date: "15/11/2023",
-      source: "ידיעות אחרונות"
+      title: t('nationalProblem.newsItems.1.title'),
+      date: t('nationalProblem.newsItems.1.date'),
+      source: t('nationalProblem.newsItems.1.source')
     },
     {
       image: "/488654812_670412395364046_4982621192097618647_n.jpg",
-      title: "המלחמה תפסה את מערך בריאות הנפש במשבר",
-      date: "13/10/2023",
-      source: "הארץ"
+      title: t('nationalProblem.newsItems.2.title'),
+      date: t('nationalProblem.newsItems.2.date'),
+      source: t('nationalProblem.newsItems.2.source')
     },
     {
       image: "/זינוק במספר הפונים לבריאות הנפש ישראל היום 22.10.23.jpeg",
-      title: "אפקט המלחמה: זינוק בשיעור הפונים לתמיכה נפשית",
-      date: "22/10/2023",
-      source: "ישראל היום"
+      title: t('nationalProblem.newsItems.3.title'),
+      date: t('nationalProblem.newsItems.3.date'),
+      source: t('nationalProblem.newsItems.3.source')
     },
     {
       image: "/ישראל במשבר בטיפולי נפש 31.10.23.JPG",
-      title: '"ישראל במשבר בריאות הנפש החמור בתולדותיה"',
-      date: "31/10/2023",
-      source: "ישראל היום"
+      title: t('nationalProblem.newsItems.4.title'),
+      date: t('nationalProblem.newsItems.4.date'),
+      source: t('nationalProblem.newsItems.4.source')
     },
     {
       image: "/מדינה בטראומה כלכליסט 26.10.23.JPG",
-      title: "מדינה בטראומה פוגשת מערכת בריאות נפש חולה",
-      date: "26/10/2023",
-      source: "כלכליסט"
+      title: t('nationalProblem.newsItems.5.title'),
+      date: t('nationalProblem.newsItems.5.date'),
+      source: t('nationalProblem.newsItems.5.source')
     }
   ];
 
@@ -67,25 +71,25 @@ const NationalProblem = () => {
   return (
     <div>
       <PageHeader 
-        title="פוסט טראומה בעיה לאומית" 
-        subtitle="לאחר שנים של מלחמות והתמודדויות, פוסט טראומה הפכה לאתגר לאומי משמעותי"
+        title={t('nationalProblem.pageHeader.title')}
+        subtitle={t('nationalProblem.pageHeader.subtitle')}
       />
       
       <div className="page-container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 items-center">
-          <div className="md:col-span-2 prose prose-lg max-w-none text-right">
+          <div className={`md:col-span-2 prose prose-lg max-w-none ${isRTL ? 'text-right' : 'text-left'}`}>
             <p className="text-2xl">
-              בעקבות המלחמה, מערכת בריאות הנפש בישראל נמצאת בעומס חסר תקדים. ההערכות מצביעות על כך ש-7% - 10% ממי שנחשפו לאירועי הקשים עשויים לפתח פוסט-טראומה. מאות אלפי ישראלים שחוו את אירועי המלחמה נמצאים בסיכון מוגבר לפגיעה נפשית.
+              {t('nationalProblem.intro.paragraph1')}
             </p>
             <p className="text-2xl">
-              אנשי מקצוע מעריכים כי כ-9,000 פניות שונות נרשמו במוקדי הסיוע הנפשי מאז פרוץ המלחמה. מערכת בריאות הנפש שהייתה במשבר עוד לפני המלחמה, כעת קורסת תחת העומס הנוסף. הצורך במתן מענה מיידי וארוך טווח הפך לאתגר לאומי מהגדולים שידענו.
+              {t('nationalProblem.intro.paragraph2')}
             </p>
           </div>
           <div className="flex items-center justify-center">
             <div className="h-auto max-h-114 rounded-lg shadow-lg max-w-[180px]">
               <img 
                 src="/ספר ולדמן.JPG" 
-                alt="ספר על טראומה" 
+                alt="Book about trauma" 
                 className="w-full object-contain mx-auto"
               />
             </div>
@@ -93,36 +97,36 @@ const NationalProblem = () => {
         </div>
         
         <div className="bg-farm-green-pale p-8 rounded-lg mb-12">
-          <h2 className="text-2xl font-bold text-farm-green mb-4 text-right">נתונים וסטטיסטיקות</h2>
+          <h2 className={`text-2xl font-bold text-farm-green mb-4 ${isRTL ? 'text-right' : 'text-left'}`}>{t('nationalProblem.statistics.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="bg-white p-6 rounded-lg shadow">
-              <p className="text-4xl font-bold text-farm-green mb-2">9,000+</p>
-              <p className="text-gray-700">פניות למוקדי סיוע נפשי מאז תחילת המלחמה</p>
+              <p className="text-4xl font-bold text-farm-green mb-2">{t('nationalProblem.statistics.stat1.number')}</p>
+              <p className="text-gray-700">{t('nationalProblem.statistics.stat1.text')}</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow">
-              <p className="text-4xl font-bold text-farm-green mb-2">250,000</p>
-              <p className="text-gray-700"> איש צפויים לסבול מפוסט טראומה</p>
+              <p className="text-4xl font-bold text-farm-green mb-2">{t('nationalProblem.statistics.stat2.number')}</p>
+              <p className="text-gray-700">{t('nationalProblem.statistics.stat2.text')}</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow">
-              <p className="text-4xl font-bold text-farm-green mb-2">80%</p>
-              <p className="text-gray-700">שיפור בעקבות טיפול בסביבה טבעית</p>
+              <p className="text-4xl font-bold text-farm-green mb-2">{t('nationalProblem.statistics.stat3.number')}</p>
+              <p className="text-gray-700">{t('nationalProblem.statistics.stat3.text')}</p>
             </div>
           </div>
         </div>
         
         {/* Kan News Video Link */}
         <div className="mb-16">
-          <h2 className="section-title">כתבה מהתקשורת</h2>
+          <h2 className="section-title">{t('nationalProblem.media.title')}</h2>
           <div className="flex justify-center">
             <div className="w-full max-w-3xl shadow-lg rounded-lg overflow-hidden">
               <div className="relative">
                 <a href="https://www.kan.org.il/content/kan-news/newstv/p-11894/s1/833126/" target="_blank" rel="noopener noreferrer" className="block">
-                  <img src="/thumbnail.png" alt="לצפייה בכתבה - החיילים שהמלחמה פצעה את נפשם" className="w-full" />
+                  <img src="/thumbnail.png" alt="View report - Soldiers wounded by war" className="w-full" />
                 </a>
               </div>
-              <div className="p-4 bg-white text-right">
-                <p className="text-gray-800 font-medium">כתבה: מתוך 5,000 - החיילים שהמלחמה פצעה את נפשם</p>
-                <p className="text-gray-600 text-sm">מקור: כאן חדשות</p>
+              <div className={`p-4 bg-white ${isRTL ? 'text-right' : 'text-left'}`}>
+                <p className="text-gray-800 font-medium">{t('nationalProblem.media.videoDescription')}</p>
+                <p className="text-gray-600 text-sm">{t('nationalProblem.media.source')}</p>
               </div>
             </div>
           </div>
@@ -130,7 +134,7 @@ const NationalProblem = () => {
         
         {/* Google Drive Video */}
         <div className="mb-16">
-          <h2 className="section-title">פרופ עוז גוטרמן: צמיחה מ PTSD </h2>
+          <h2 className="section-title">{t('nationalProblem.profOz.title')}</h2>
           <div className="flex justify-center">
             <div className="w-full max-w-3xl shadow-lg rounded-lg overflow-hidden relative">
               <div className="relative aspect-video">
@@ -139,19 +143,18 @@ const NationalProblem = () => {
                   className="absolute top-0 left-0 w-full h-full"
                   allow="autoplay"
                   allowFullScreen
-                  title="סרטון הסברה על פוסט-טראומה"
+                  title="Educational video about PTSD"
                 ></iframe>
               </div>
-              <div className="p-4 bg-white text-right">
-                <p className="text-gray-800 font-medium">סרטון: פוסט-טראומה ודרכי התמודדות</p>
-                {/* <p className="text-gray-600 text-sm">מקור: עֹז וְתַעֲצֻמוֹת</p> */}
+              <div className={`p-4 bg-white ${isRTL ? 'text-right' : 'text-left'}`}>
+                <p className="text-gray-800 font-medium">{t('nationalProblem.profOz.videoDescription')}</p>
               </div>
             </div>
           </div>
         </div>
         
         <div className="mb-16">
-          <h2 className="section-title">כותרות מהעיתונות</h2>
+          <h2 className="section-title">{t('nationalProblem.headlines.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsImages.map((item, i) => (
               <Card key={i} className="overflow-hidden shadow-md hover:shadow-xl transition-shadow">
@@ -165,11 +168,11 @@ const NationalProblem = () => {
                     className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:opacity-80"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <p className="text-white text-lg font-semibold">לחץ להגדלת התמונה</p>
+                    <p className="text-white text-lg font-semibold">{t('nationalProblem.headlines.clickToEnlarge')}</p>
                   </div>
                 </div>
-                <CardContent className="p-4 text-right">
-                  <p className="text-sm text-gray-500">פורסם: {item.date} | {item.source}</p>
+                <CardContent className={`p-4 ${isRTL ? 'text-right' : 'text-left'}`}>
+                  <p className="text-sm text-gray-500">{t('nationalProblem.headlines.published')}: {item.date} | {item.source}</p>
                   <h3 className="font-semibold mt-1 text-farm-green">
                     {item.title}
                   </h3>
@@ -179,13 +182,13 @@ const NationalProblem = () => {
           </div>
         </div>
         
-        <div className="mb-12 prose prose-lg max-w-none text-right">
-          <h2 className="text-2xl font-bold text-farm-green mb-4">מה אנחנו יכולים לעשות?</h2>
+        <div className={`mb-12 prose prose-lg max-w-none ${isRTL ? 'text-right' : 'text-left'}`}>
+          <h2 className="text-2xl font-bold text-farm-green mb-4">{t('nationalProblem.whatCanWeDo.title')}</h2>
           <p>
-            מדינת ישראל נמצאת בטראומה לאומית, כדי לא להגיע אל עשרות אלפי האזרחים והחיילים כחולים נפשית מפוסט טראומה לכל חייהם, יש חלון זמן קטן אחרי האירוע, לעזור ולסייע, והאמצעים להפיכת כרונית, לילות של סיוטים, התקפי זעם, המרכזיות, סבל נורא, כאב נפשי מדמם, כדי שהחיים משפחות, הזמן משפחות.
+            {t('nationalProblem.whatCanWeDo.paragraph1')}
           </p>
           <p>
-            ביכולותינו לנצל את האמצעים והכלים הטבעיים המוכחים מחקרית כדי לסייע בהתמודדות ובמניעת החמרת הטראומה בקרב נפגעי ההלם. שהייה בטבע, טיפול בחיות, חקלאות טיפולית ותרפיה בטבע הם דרכים שהוכחו מחקרית כבעלות השפעה משמעותית על החלמה מפוסט-טראומה.
+            {t('nationalProblem.whatCanWeDo.paragraph2')}
           </p>
         </div>
       </div>
@@ -209,7 +212,7 @@ const NationalProblem = () => {
             <div className="bg-white p-4 rounded-lg shadow-xl">
               <img 
                 src={selectedImage} 
-                alt="הגדלת תמונה" 
+                alt="Enlarged image" 
                 className="max-w-full max-h-[85vh] object-contain mx-auto"
                 style={{ maxWidth: '90vw' }}
               />

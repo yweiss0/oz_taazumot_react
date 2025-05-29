@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import PageHeader from '@/components/PageHeader';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const { t } = useTranslation();
+  const { direction } = useLanguage();
 
   // Function to generate a direct viewable URL for Google Drive images
   const getImageUrl = (id: string) => {
@@ -104,16 +108,16 @@ const Gallery = () => {
   return (
     <div>
       <PageHeader 
-        title="גלריה" 
-        subtitle="תמונות ווידאו מפעילות החווה"
+        title={t('gallery.pageHeader.title')} 
+        subtitle={t('gallery.pageHeader.subtitle')}
       />
       
       <div className="page-container">
-        <Tabs defaultValue="images" dir="rtl" className="mb-12">
-          <div className="flex justify-end mb-6">
+        <Tabs defaultValue="images" dir={direction} className="mb-12">
+          <div className={`flex ${direction === 'rtl' ? 'justify-end' : 'justify-start'} mb-6`}>
             <TabsList>
-              <TabsTrigger value="images">תמונות</TabsTrigger>
-              <TabsTrigger value="videos">וידאו</TabsTrigger>
+              <TabsTrigger value="images">{t('gallery.tabs.images')}</TabsTrigger>
+              <TabsTrigger value="videos">{t('gallery.tabs.videos')}</TabsTrigger>
             </TabsList>
           </div>
           
@@ -133,20 +137,20 @@ const Gallery = () => {
                     loading="lazy"
                   ></iframe>
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10">
-                    <p className="text-white text-lg font-semibold">לחץ להגדלת התמונה</p>
+                    <p className="text-white text-lg font-semibold">{t('gallery.clickToEnlarge')}</p>
                   </div>
                 </div>
               ))}
             </div>
             {/* Pagination Controls */}
             {totalPages > 1 && (
-              <div className="flex justify-center mt-6 space-x-4 rtl:space-x-reverse">
+              <div className={`flex justify-center mt-6 space-x-4 ${direction === 'rtl' ? 'rtl:space-x-reverse' : ''}`}>
                 <button
                   onClick={() => setCurrentPage((p) => Math.max(p - 1, 0))}
                   disabled={currentPage === 0}
                   className="px-4 py-2 rounded bg-farm-green text-white disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  קודם
+                  {t('gallery.previous')}
                 </button>
                 <span className="self-center text-farm-green font-semibold">
                   {currentPage + 1} / {totalPages}
@@ -156,7 +160,7 @@ const Gallery = () => {
                   disabled={currentPage === totalPages - 1}
                   className="px-4 py-2 rounded bg-farm-green text-white disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  הבא
+                  {t('gallery.next')}
                 </button>
               </div>
             )}
@@ -190,10 +194,10 @@ const Gallery = () => {
           </TabsContent>
         </Tabs>
         
-        <div className="prose prose-lg max-w-none text-right mb-12">
-          <h2 className="text-2xl font-bold text-farm-green mb-4">אירועים מיוחדים בחווה</h2>
+        <div className={`prose prose-lg max-w-none ${direction === 'rtl' ? 'text-right' : 'text-left'} mb-12`}>
+          <h2 className="text-2xl font-bold text-farm-green mb-4">{t('gallery.specialEvents.title')}</h2>
           <p>
-          אנו עורכים אירועים מיוחדים לפי הזמנה של יחידות צהל, עיבוד חוויות לחימה, משפחות שכול,   אירועי מוסיקה, יוגה בטבע, ועוד
+            {t('gallery.specialEvents.content')}
           </p>
         </div>
       </div>

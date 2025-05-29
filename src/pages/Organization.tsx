@@ -1,9 +1,11 @@
-
 import React from 'react';
 import PageHeader from '@/components/PageHeader';
 import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Organization = () => {
+  const { isRTL } = useLanguage();
+  
   return (
     <div>
       <PageHeader 
@@ -19,7 +21,7 @@ const Organization = () => {
             </div>
           </div>
           
-          <div className="prose prose-lg max-w-none text-right">
+          <div className={`prose prose-lg max-w-none ${isRTL ? 'text-right' : 'text-left'}`}>
             <h2 className="text-2xl font-bold text-farm-green mb-4">מי אנחנו</h2>
             <p>
               לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק.
@@ -39,7 +41,7 @@ const Organization = () => {
                   <div className="w-24 h-24 rounded-full bg-farm-earth-pale mx-auto mb-4" />
                   <h3 className="text-xl font-bold mb-2 text-farm-green">שם מלא {i}</h3>
                   <p className="text-farm-earth mb-3">תפקיד בעמותה</p>
-                  <p className="text-gray-700 text-sm">
+                  <p className={`text-gray-700 text-sm ${isRTL ? 'text-right' : 'text-left'}`}>
                     לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה.
                   </p>
                 </CardContent>
@@ -63,7 +65,7 @@ const Organization = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <div className="prose prose-lg max-w-none text-right">
+          <div className={`prose prose-lg max-w-none ${isRTL ? 'text-right' : 'text-left'}`}>
             <h2 className="text-2xl font-bold text-farm-green mb-4">החזון שלנו</h2>
             <p>
               לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק.
@@ -73,7 +75,7 @@ const Organization = () => {
             </p>
           </div>
           
-          <div className="prose prose-lg max-w-none text-right">
+          <div className={`prose prose-lg max-w-none ${isRTL ? 'text-right' : 'text-left'}`}>
             <h2 className="text-2xl font-bold text-farm-green mb-4">המשימה שלנו</h2>
             <p>
               הועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש ערששף. זותה מנחת. גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.
@@ -83,7 +85,7 @@ const Organization = () => {
         
         <div className="mb-12">
           <h2 className="section-title">שקיפות ציבורית</h2>
-          <div className="prose prose-lg max-w-none text-right mb-8">
+          <div className={`prose prose-lg max-w-none ${isRTL ? 'text-right' : 'text-left'} mb-8`}>
             <p>
               לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק.
             </p>
@@ -91,9 +93,9 @@ const Organization = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="card">
-              <CardContent className="p-6 text-right">
+              <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
                 <h3 className="text-xl font-bold mb-2 text-farm-green">מסמכים רשמיים</h3>
-                <ul className="space-y-2 text-gray-700">
+                <ul className={`space-y-2 text-gray-700 ${isRTL ? 'list-none' : 'list-disc list-inside'}`}>
                   <li>אישור ניהול תקין</li>
                   <li>אישור מס הכנסה לתרומות</li>
                   <li>תקנון העמותה</li>
@@ -103,9 +105,9 @@ const Organization = () => {
             </Card>
             
             <Card className="card">
-              <CardContent className="p-6 text-right">
+              <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
                 <h3 className="text-xl font-bold mb-2 text-farm-green">דוחות כספיים</h3>
-                <ul className="space-y-2 text-gray-700">
+                <ul className={`space-y-2 text-gray-700 ${isRTL ? 'list-none' : 'list-disc list-inside'}`}>
                   <li>דוח כספי 2023</li>
                   <li>דוח כספי 2022</li>
                   <li>דוח כספי 2021</li>
@@ -115,9 +117,9 @@ const Organization = () => {
             </Card>
             
             <Card className="card">
-              <CardContent className="p-6 text-right">
+              <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
                 <h3 className="text-xl font-bold mb-2 text-farm-green">דוחות פעילות</h3>
-                <ul className="space-y-2 text-gray-700">
+                <ul className={`space-y-2 text-gray-700 ${isRTL ? 'list-none' : 'list-disc list-inside'}`}>
                   <li>סיכום פעילות 2023</li>
                   <li>סיכום פעילות 2022</li>
                   <li>תוכניות לשנת 2024</li>

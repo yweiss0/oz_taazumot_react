@@ -1,10 +1,12 @@
-
 import React from 'react';
 import PageHeader from '@/components/PageHeader';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Donate = () => {
+  const { isRTL } = useLanguage();
+  
   return (
     <div>
       <PageHeader 
@@ -13,7 +15,7 @@ const Donate = () => {
       />
       
       <div className="page-container">
-        <div className="prose prose-lg max-w-none text-right mb-12">
+        <div className={`prose prose-lg max-w-none ${isRTL ? 'text-right' : 'text-left'} mb-12`}>
           <p>
             לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק.
           </p>
@@ -40,12 +42,12 @@ const Donate = () => {
               }
             ].map((option, i) => (
               <Card key={i} className="card">
-                <CardContent className="p-6 text-right">
+                <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
                   <h3 className="text-xl font-bold mb-4 text-farm-green">{option.title}</h3>
                   <p className="text-gray-700 mb-6">
                     {option.description}
                   </p>
-                  <div className="flex justify-end">
+                  <div className={`flex ${isRTL ? 'justify-end' : 'justify-start'}`}>
                     <Button className="bg-farm-green hover:bg-farm-green-light text-white">
                       תרום עכשיו
                     </Button>
@@ -57,7 +59,7 @@ const Donate = () => {
         </div>
         
         <div className="bg-farm-green-pale p-8 rounded-lg mb-16">
-          <h2 className="text-2xl font-bold text-farm-green mb-6 text-right">סכומי תרומה מוצעים</h2>
+          <h2 className={`text-2xl font-bold text-farm-green mb-6 ${isRTL ? 'text-right' : 'text-left'}`}>סכומי תרומה מוצעים</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
             {[50, 100, 200, 500, 1000, 'אחר'].map((amount, i) => (
               <div key={i} className="bg-white p-4 rounded-lg text-center cursor-pointer hover:bg-farm-earth-pale transition-colors">
@@ -72,11 +74,11 @@ const Donate = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-center">
           <div>
             <h2 className="section-title">למה לתרום לנו?</h2>
-            <div className="prose prose-lg max-w-none text-right">
+            <div className={`prose prose-lg max-w-none ${isRTL ? 'text-right' : 'text-left'}`}>
               <p>
                 לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק.
               </p>
-              <ul>
+              <ul className={isRTL ? 'list-none' : 'list-disc list-inside'}>
                 <li>100% מהתרומות מופנות ישירות לפעילות</li>
                 <li>אישור מס לפי סעיף 46 לפקודת מס הכנסה</li>
                 <li>שקיפות מלאה בניהול הכספים</li>
@@ -95,7 +97,7 @@ const Donate = () => {
         <div className="mb-12">
           <h2 className="section-title">פרטים לתרומה בהעברה בנקאית</h2>
           <div className="bg-white p-6 rounded-lg shadow-sm border border-farm-earth-pale mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-right">
+            <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${isRTL ? 'text-right' : 'text-left'}`}>
               <div>
                 <p className="mb-2">
                   <span className="font-semibold text-farm-green">שם העמותה:</span> רפואה בשבע
@@ -121,7 +123,7 @@ const Donate = () => {
             </div>
           </div>
           
-          <div className="text-right">
+          <div className={isRTL ? 'text-right' : 'text-left'}>
             <p className="text-lg text-farm-green">לקבלת קבלה עבור תרומתכם, אנא שלחו הודעת אימייל ל-donations@refuahbesheva.org.il</p>
           </div>
         </div>

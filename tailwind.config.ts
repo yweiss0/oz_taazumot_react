@@ -70,7 +70,7 @@ export default {
 				}
 			},
 			fontFamily: {
-				'david': ['David', 'serif'],
+				'serif': ['serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

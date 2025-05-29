@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap');
-/* Adding David font for Hebrew text */
-@import url('https://fonts.maaot.com/david.css');
+/* Using a fallback serif font instead of David */
 
 @tailwind base;
 @tailwind components;
@@ -44,8 +43,15 @@
   }
 
   html {
-    direction: rtl;
     font-family: 'Heebo', sans-serif;
+  }
+  
+  html.rtl {
+    direction: rtl;
+  }
+  
+  html.ltr {
+    direction: ltr;
   }
 
   body {
@@ -58,25 +64,46 @@
     @apply container max-w-7xl mx-auto px-4 py-8 md:py-12;
   }
   
+  /* RTL/LTR text alignment classes */
+  html.rtl .section-title,
+  html.rtl .section-subtitle,
+  html.rtl .page-content {
+    @apply text-right;
+  }
+  
+  html.ltr .section-title,
+  html.ltr .section-subtitle,
+  html.ltr .page-content {
+    @apply text-left;
+  }
+  
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-farm-green mb-6 text-right;
+    @apply text-3xl md:text-4xl font-bold text-farm-green mb-6;
   }
   
   .section-subtitle {
-    @apply text-xl md:text-2xl font-semibold text-farm-green-light mb-4 text-right;
+    @apply text-xl md:text-2xl font-semibold text-farm-green-light mb-4;
   }
   
   .page-content {
-    @apply prose prose-lg max-w-none text-right;
+    @apply prose prose-lg max-w-none;
   }
 
   .hero-section {
     @apply relative h-[60vh] min-h-[400px] w-full bg-farm-green-pale flex items-center justify-center overflow-hidden;
-    font-family: 'David', serif;
+    font-family: serif;
+  }
+  
+  html.rtl .hero-content {
+    @apply text-right;
+  }
+  
+  html.ltr .hero-content {
+    @apply text-left;
   }
   
   .hero-content {
-    @apply container max-w-7xl mx-auto px-4 z-10 text-right;
+    @apply container max-w-7xl mx-auto px-4 z-10;
   }
   
   .hero-title {
@@ -87,9 +114,9 @@
     @apply text-xl md:text-2xl text-farm-earth max-w-2xl mb-8 animate-fade-in;
   }
   
-  /* Add hero quote styling with David font */
+  /* Add hero quote styling with serif font */
   .hero-content p.text-xl.text-farm-earth.animate-fade-in.font-semibold {
-    font-family: 'David', serif;
+    font-family: serif;
   }
   
   .card {

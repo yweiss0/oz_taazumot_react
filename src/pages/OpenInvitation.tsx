@@ -2,28 +2,30 @@ import React, { useState, useRef } from 'react';
 import PageHeader from '@/components/PageHeader';
 import { Card, CardContent } from '@/components/ui/card';
 import { X, Play } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const OpenInvitation = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { t } = useTranslation();
 
   // Image IDs from Google Drive
   const invitationImages = [
     {
       // From: https://drive.google.com/file/d/1EbyItA-mfzLnlVGSZUnPgrSgpSTev5rA/view?usp=sharing
       id: "1EbyItA-mfzLnlVGSZUnPgrSgpSTev5rA",
-      alt: "הזמנה פתוחה 1"
+      alt: `${t('openInvitation.imageAlt')} 1`
     },
     {
       // From: https://drive.google.com/file/d/1B2SE9rdMSTjVm_NjurWEMUxbn8183Mec/view?usp=drive_link
       id: "1B2SE9rdMSTjVm_NjurWEMUxbn8183Mec",
-      alt: "הזמנה פתוחה 2"
+      alt: `${t('openInvitation.imageAlt')} 2`
     },
     {
       // From: https://drive.google.com/file/d/1DPX3nLs8badiq9Nz3Rs45eng2eaNdkYz/view?usp=drive_link
       id: "1DPX3nLs8badiq9Nz3Rs45eng2eaNdkYz",
-      alt: "הזמנה פתוחה 3"
+      alt: `${t('openInvitation.imageAlt')} 3`
     }
   ];
 
@@ -47,8 +49,8 @@ const OpenInvitation = () => {
   return (
     <div>
       <PageHeader 
-        title="הזמנה פתוחה" 
-        subtitle="האירוח ללא תמורה "
+        title={t('openInvitation.pageHeader.title')} 
+        subtitle={t('openInvitation.pageHeader.subtitle')}
       />
       
       <div className="page-container">
@@ -64,7 +66,7 @@ const OpenInvitation = () => {
               onPause={() => setIsVideoPlaying(false)}
               onEnded={() => setIsVideoPlaying(false)}
             >
-              Your browser does not support the video tag.
+              {t('openInvitation.videoNotSupported')}
             </video>
             
             {!isVideoPlaying && (
@@ -95,7 +97,7 @@ const OpenInvitation = () => {
                   loading="lazy"
                 ></iframe>
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10">
-                  <p className="text-white text-lg font-semibold">לחץ להגדלת התמונה</p>
+                  <p className="text-white text-lg font-semibold">{t('openInvitation.clickToEnlarge')}</p>
                 </div>
               </div>
             </Card>

@@ -2,119 +2,113 @@ import React from 'react';
 import Hero from '@/components/Hero';
 import { Card, CardContent } from '@/components/ui/card';
 import { HandshakeIcon, BookOpenIcon, UsersIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Home = () => {
+  const { t } = useTranslation();
+  const { isRTL } = useLanguage();
+
   return (
     <div>
       <Hero
-        title="עֹז וְתַעֲצֻמוֹת - חווה חקלאית לשיקום הלומי קרב-ע&quot;ר"
+        title={t('home.hero.title')}
         subtitle=""
         imageSrc="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
-        quote="יִקְרָאֵנִי וְאֶעֱנֵהוּ,עִמּוֹ אָנֹכִי בְצָרָה אֲחַלְּצֵהוּ וַאֲכַבְּדֵהוּ. תהלים צא 15"
-        supportText="כולנו עמכם גיבורי התהילה"
+        quote={t('home.hero.quote')}
+        supportText={t('home.hero.supportText')}
       />
       
       <div className="page-container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           
           <Card className="card">
-            <CardContent className="p-6 text-right">
-              <div className="flex justify-end mb-4">
+            <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
+              <div className={`flex ${isRTL ? 'justify-end' : 'justify-start'} mb-4`}>
                 <HandshakeIcon className="w-10 h-10 text-farm-green" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-farm-green">שיקום בטבע</h3>
+              <h3 className="text-xl font-bold mb-2 text-farm-green">{t('home.cards.rehabilitation.title')}</h3>
               <p className="text-gray-700">
-                כאן, בטבע ובחקלאות, הלומי הקרב לוקחים אחריות על תהליך ההחלמה של עצמם. הם עובדים עם האדמה, מגדלים עצים וצמחים, מטפלים בבעלי חיים.
+                {t('home.cards.rehabilitation.content')}
               </p>
             </CardContent>
           </Card>
           
           <Card className="card">
-            <CardContent className="p-6 text-right">
-              <div className="flex justify-end mb-4">
+            <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
+              <div className={`flex ${isRTL ? 'justify-end' : 'justify-start'} mb-4`}>
                 <BookOpenIcon className="w-10 h-10 text-farm-green" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-farm-green">יוזמה ייחודית</h3>
+              <h3 className="text-xl font-bold mb-2 text-farm-green">{t('home.cards.initiative.title')}</h3>
               <p className="text-gray-700">
-                החווה היא לא רק מקום של עבודה, אלא גם של תרפיה, שיחות, שירה, מוזיקה וסרטים – הכל באוויר הפתוח, הכל עם הלב.
+                {t('home.cards.initiative.content')}
               </p>
             </CardContent>
           </Card>
           
           <Card className="card">
-            <CardContent className="p-6 text-right">
-              <div className="flex justify-end mb-4">
+            <CardContent className={`p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
+              <div className={`flex ${isRTL ? 'justify-end' : 'justify-start'} mb-4`}>
                 <UsersIcon className="w-10 h-10 text-farm-green" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-farm-green">קהילה תומכת</h3>
+              <h3 className="text-xl font-bold mb-2 text-farm-green">{t('home.cards.community.title')}</h3>
               <p className="text-gray-700">
-                אנו יוצרים קהילה תומכת שמבינה לעומק את הכאב – וגם את התקווה. החווה מזמינה אתכם לקחת חלק – בהתנדבות, בייעוץ, בתרומות או בכל דרך אחרת.
+                {t('home.cards.community.content')}
               </p>
             </CardContent>
           </Card>
         </div>
-        <h2 className="section-title">הפרעת דְּחָק פוסט־טראומטית Post-Traumatic Stress Disorder; PTSD </h2>
-            <div className="prose prose-lg text-right mb-8">
+        <h2 className="section-title">{t('home.ptsd.title')}</h2>
+        <div className={`prose prose-lg ${isRTL ? 'text-right' : 'text-left'} mb-8`}>
               <p>
-              פוסט־טראומה, היא הפרעה נפשית מתחום ההפרעות הקשורות לטראומה וגורמי דחק. פוסט־טראומה עלולה להיווצר בעקבות חשיפה לאירוע טראומטי הכרוך בסיכון ממשי לאדם או לסובבים אותו. לדוגמה: מלחמה, תאונת דרכים, אונס, פיגוע טרור, קרב, שוד, תקיפה מינית, אלימות, שרפה וכדומה.
-טראומה משנית היא ההשפעה הנפשית שנגרמת למטפלים, הנמצאים בקשר רגשי קרוב עם שורדי טראומות. אוכלוסיות בסיכון הם עובדים סוציאליים, פסיכולוגים, שוטרים, מגישי עזרה ראשונה. 
-
+            {t('home.ptsd.content')}
               </p>
-              
             </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           <div>
-            <h2 className="section-title">על המקום</h2>
-            <div className="prose prose-lg text-right">
+            <h2 className="section-title">{t('home.about.title')}</h2>
+            <div className={`prose prose-lg ${isRTL ? 'text-right' : 'text-left'}`}>
               <p>
-                בחווה בגליל, מול נוף עוצר נשימה של הכנרת, הגולן ועמק הירדן, נולדה יוזמה ייחודית ומרגשת: מקום שיקום, צמיחה ותקווה להלומי קרב – חיילים שהתמודדו עם קרבות קשים ושילמו מחיר נפשי כבד. הם חזרו הביתה, אבל עם פצעים שקופים – צלקות שאינן נראות, אך כואבות לא פחות.
+                {t('home.about.content1')}
               </p>
               <p>
-                כאן, בטבע ובחקלאות, הלומי הקרב לוקחים אחריות על תהליך ההחלמה של עצמם. הם עובדים עם האדמה, מגדלים עצים וצמחים, מטפלים בבעלי חיים, ויוצרים קהילה תומכת שמבינה לעומק את הכאב – וגם את התקווה.
+                {t('home.about.content2')}
               </p>
             </div>
           </div>
           
           <div>
-            <h2 className="section-title">המשימה שלנו</h2>
-            <div className="prose prose-lg text-right">
+            <h2 className="section-title">{t('home.mission.title')}</h2>
+            <div className={`prose prose-lg ${isRTL ? 'text-right' : 'text-left'}`}>
               <p>
-                חן ברין, מורה דרך ומדריך שטח, יחד עם הסופר והחוקר שלמה ולדמן, מובילים את הפרויקט מתוך שליחות עמוקה ותחושת אחריות. החווה היא לא רק מקום של עבודה, אלא גם של תרפיה, שיחות, שירה, מוזיקה וסרטים – הכל באוויר הפתוח, הכל עם הלב.
+                {t('home.mission.content1')}
               </p>
               <p>
-                החווה מזמינה אתכם לקחת חלק – בהתנדבות, בייעוץ, בתרומות או בכל דרך אחרת. לא רק בכסף – אלא בלב, בידיים ובעשייה. יחד אנחנו יכולים לעזור להם באמת.
+                {t('home.mission.content2')}
               </p>
             </div>
           </div>
         </div>
-        {/* <h2 className="section-title font-bold ">צמיחה מפוסט טראומה (PTG)    </h2> */}
-            <div className="prose prose-lg text-right mb-8  bg-farm-green-pale p-8 rounded-lg text-center">
-              <h2 className="section-title text-2xl font-bold mb-4">צמיחה מפוסט טראומה (PTG)</h2>
+        <div className={`prose prose-lg ${isRTL ? 'text-right' : 'text-left'} mb-8 bg-farm-green-pale p-8 rounded-lg text-center`}>
+          <h2 className="section-title text-2xl font-bold mb-4">{t('home.ptg.title')}</h2>
               <p>
-              היא תהליך בו אנשים חווים שינויים פסיכולוגיים חיוביים בעקבות התמודדות עם אירועים טראומטיים. היא מובילה אותו לשינויים משמעותיים בתפיסת עצמו, יחסיו עם אחרים ובתפיסת עולמו.
-אחד התחומים המרכזיים של צמיחה הוא התחזקות אישית – תחושת כוח פנימי ויכולת להתמודד טוב יותר עם אתגרים עתידיים. אנשים רבים מדווחים על שיפור במערכות היחסים שלהם, חיבור רגשי עמוק יותר ותחושת חמלה מוגברת כלפי אחרים.
-לעיתים קרובות עולה תחושת הערכה מחודשת לחיים, הכרת תודה על הדברים הקטנים והיכולת ליהנות מהרגע. הצמיחה מקבלת  ביטוי גם בשינויים רוחניים – חיפוש משמעות, חיזוק האמונה או שינוי מערכת הערכים האישית. מחקרים מראים כי בין 30% ל-70% מהשורדים מדווחים על שינויים חיוביים כלשהם.
-גורמים התורמים לצמיחה כוללים שהייה בסביבה תומכת, בילוי בטבע הפתוח, מוסיקה  שקטה, פגישות תמיכה קבוצתיות, עיבוד רגשי וקוגניטיבי של האירוע, תמיכה חברתית, אופטימיות ואסטרטגיות התמודדות חיוביות.
-צמיחה מפוסט טראומה מדגישה את היכולת האנושית למצוא משמעות, תקווה והתפתחות אישית גם מתוך משבר וסבל עמוק.
-
+            {t('home.ptg.content')}
               </p>
-              
             </div>
         <div className="mb-12">
-          <h2 className="section-title">הצטרפו אלינו</h2>
+          <h2 className="section-title">{t('home.join.title')}</h2>
           <div className="bg-farm-green-pale p-8 rounded-lg text-center">
             <p className="text-xl md:text-2xl text-farm-green mb-4">
-              הלוחמים לא נשארים לבד
+              {t('home.join.subtitle1')}
             </p>
-            <p className="text-xl md:text-2xl text-farm-green mb-4 font-bold font-david">
-            עִמּוֹ אָנֹכִי בְצָרָה אֲחַלְּצֵהוּ וַאֲכַבְּדֵהוּ. <span className="text-sm md:text-base">תהלים צא  15</span>
+            <p className="text-xl md:text-2xl text-farm-green mb-4 font-bold">
+              {t('home.join.quote')} <span className="text-sm md:text-base">Psalms 91:15</span>
             </p>
             <p className="text-lg md:text-xl text-farm-earth mb-6">
-              חווה טיפולית להלומי קרב – צמיחה אמיתית מהלב ומהאדמה
+              {t('home.join.subtitle2')}
             </p>
             <p className="text-gray-700">
-              במקום אחד קסום בגליל, מול נוף עוצר נשימה, חיילים שנפגעו נפשית בקרב מוצאים תקווה. כאן הם עובדים בטבע, מגדלים, בונים, ומרפאים את עצמם – יחד.
-              הצטרפו אלינו ביוזמה ישראלית מרגשת שמחזירה אור לנשמות שנכוו.
+              {t('home.join.content')}
             </p>
           </div>
         </div>
