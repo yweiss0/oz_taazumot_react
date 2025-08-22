@@ -805,8 +805,8 @@ i18n
         translation: heTranslations
       }
     },
-    lng: 'en', // Default language is English
-    fallbackLng: 'en',
+    lng: 'he', // Default language is Hebrew
+    fallbackLng: 'he',
     interpolation: {
       escapeValue: false, // React already escapes values
     },
